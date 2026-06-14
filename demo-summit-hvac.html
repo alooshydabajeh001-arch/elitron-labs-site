@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summit Heating & Cooling — Dearborn, MI | 24/7 HVAC Repair & Install</title>
+<meta name="description" content="Fast, reliable heating and air conditioning repair, installation, and maintenance in Dearborn and Metro Detroit. Same-day service. Free estimates.">
+<style>
+  :root{--navy:#0d1b2a;--navy2:#16273c;--blue:#1f7ae0;--orange:#ff6a2b;--ink:#1a2230;--mut:#5b6675;--bg:#f6f8fb;--line:#e3e9f0}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .btn{display:inline-block;background:var(--orange);color:#fff;font-weight:800;padding:15px 28px;border-radius:9px;font-size:16px;border:none;cursor:pointer;box-shadow:0 8px 22px rgba(255,106,43,.32);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-blue{background:var(--blue);box-shadow:0 8px 22px rgba(31,122,224,.3)}
+  .btn-ghost{background:transparent;border:2px solid #fff;color:#fff;box-shadow:none}
+
+  /* top bar */
+  .topbar{background:var(--navy);color:#cdd8e6;font-size:14px}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:42px;flex-wrap:wrap}
+  .topbar b{color:#fff}
+  /* nav */
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:22px;color:var(--navy)}
+  .brand .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#0d4f9e);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px}
+  .brand small{display:block;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--orange);margin-top:-3px}
+  .nlinks{display:flex;gap:26px;align-items:center;color:var(--ink);font-weight:600;font-size:15px}
+  .nlinks a:hover{color:var(--blue)}
+  .callnav{font-weight:900;color:var(--navy);font-size:18px}
+  @media(max-width:820px){.nlinks{display:none}}
+
+  /* hero */
+  .hero{background:linear-gradient(120deg,var(--navy) 0%,var(--navy2) 60%,#1d3b5c 100%);color:#fff;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(31,122,224,.45),transparent 70%)}
+  .hero .wrap{position:relative;z-index:1;padding:78px 22px 86px;max-width:760px}
+  .hero .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:7px 15px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:22px}
+  .hero h1{font-size:clamp(32px,5.5vw,52px);line-height:1.08;font-weight:900;letter-spacing:-1px;margin-bottom:18px}
+  .hero p{font-size:clamp(16px,2.2vw,20px);color:#c7d4e6;margin-bottom:30px}
+  .hcta{display:flex;gap:14px;flex-wrap:wrap}
+  .stars{color:#ffc043;letter-spacing:2px}
+  .hero .rate{margin-top:30px;display:flex;gap:10px;align-items:center;color:#c7d4e6;font-size:15px}
+
+  .trustbar{background:var(--navy2);color:#cdd8e6}
+  .trustbar .wrap{display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px;padding:20px 22px;text-align:center}
+  .trustbar b{display:block;color:#fff;font-size:22px}
+  .trustbar span{font-size:13px}
+
+  section{padding:74px 0}
+  .ey{color:var(--orange);font-weight:800;letter-spacing:1.5px;text-transform:uppercase;font-size:13px;text-align:center}
+  h2{text-align:center;font-size:clamp(26px,4vw,38px);font-weight:900;color:var(--navy);margin:8px 0 12px;letter-spacing:-.5px}
+  .sub{text-align:center;color:var(--mut);max-width:600px;margin:0 auto 46px;font-size:17px}
+
+  .grid{display:grid;gap:22px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px;box-shadow:0 10px 30px rgba(13,27,42,.05);transition:transform .15s,box-shadow .15s}
+  .svc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(13,27,42,.1)}
+  .svc .ic{width:56px;height:56px;border-radius:12px;background:#eaf3ff;color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px}
+  .svc h3{font-size:20px;color:var(--navy);margin-bottom:8px}
+  .svc p{color:var(--mut);font-size:15px}
+
+  .why{background:var(--bg)}
+  .why .grid{margin-top:10px}
+  .feat{display:flex;gap:14px;align-items:flex-start}
+  .feat .chk{flex:none;width:38px;height:38px;border-radius:50%;background:#e6f7ee;color:#16a34a;display:flex;align-items:center;justify-content:center;font-weight:900}
+  .feat h4{color:var(--navy);font-size:18px}
+  .feat p{color:var(--mut);font-size:15px}
+
+  .reviews{background:var(--navy);color:#fff}
+  .reviews h2{color:#fff}
+  .rev{background:var(--navy2);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px}
+  .rev p{color:#d7e0ec;font-size:15px;margin:12px 0}
+  .rev .who{font-weight:800;color:#fff}.rev .loc{color:#8ea3bd;font-size:13px}
+
+  .cta{background:linear-gradient(120deg,var(--blue),#0d4f9e);color:#fff;text-align:center}
+  .cta h2{color:#fff}.cta p{color:#dbeafe;max-width:540px;margin:0 auto 28px;font-size:18px}
+
+  .area{text-align:center}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+  .chip{background:#eaf3ff;color:var(--navy);font-weight:700;padding:9px 18px;border-radius:999px;font-size:14px}
+
+  footer{background:var(--navy);color:#9fb2c8;padding:46px 0 26px;font-size:14px}
+  .fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:26px}
+  footer b{color:#fff}
+  .fnote{padding-top:20px;text-align:center;color:#6f86a0;font-size:13px}
+
+  /* sticky mobile call */
+  .stickycall{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--orange);color:#fff;text-align:center;padding:15px;font-weight:900;font-size:17px;z-index:60;box-shadow:0 -4px 16px rgba(0,0,0,.2)}
+  @media(max-width:820px){.stickycall{display:block}.g3,.g2{grid-template-columns:1fr}body{padding-bottom:54px}}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span>⭐ Serving Dearborn &amp; Metro Detroit since 2009</span>
+  <span><b>Open 24/7</b> · Same-day service · <b>(313) 555-0199</b></span>
+</div></div>
+
+<header><div class="wrap"><nav>
+  <a href="#" class="brand"><span class="logo">❄</span><span>Summit<small>HEATING &amp; COOLING</small></span></a>
+  <div class="nlinks">
+    <a href="#services">Services</a><a href="#why">Why Us</a><a href="#reviews">Reviews</a><a href="#area">Service Area</a>
+    <a href="#contact" class="callnav">📞 (313) 555-0199</a>
+  </div>
+</nav></div></header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="badge">🔧 Licensed &amp; insured · Same-day repairs</div>
+    <h1>Heating &amp; cooling you can count on — day or night.</h1>
+    <p>Fast, honest HVAC repair, installation, and maintenance across Dearborn and Metro Detroit. No overtime fees. Upfront pricing. We answer the phone 24/7.</p>
+    <div class="hcta">
+      <a href="#contact" class="btn">Book Free Estimate</a>
+      <a href="tel:+13135550199" class="btn btn-ghost">📞 Call (313) 555-0199</a>
+    </div>
+    <div class="rate"><span class="stars">★★★★★</span> Rated 4.9/5 from 380+ local customers</div>
+  </div>
+</section>
+
+<div class="trustbar"><div class="wrap">
+  <div><b>24/7</b><span>Emergency service</span></div>
+  <div><b>15+ yrs</b><span>In business</span></div>
+  <div><b>$0</b><span>Estimates</span></div>
+  <div><b>4.9★</b><span>Google rating</span></div>
+</div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="ey">Our Services</div>
+    <h2>Whatever's broken, we fix it</h2>
+    <p class="sub">From a no-heat emergency in January to a brand-new AC install in July — one call does it all.</p>
+    <div class="grid g3">
+      <div class="svc"><div class="ic">🔥</div><h3>Heating Repair</h3><p>Furnace not kicking on? We diagnose and fix fast, with upfront pricing before any work starts.</p></div>
+      <div class="svc"><div class="ic">❄️</div><h3>AC Repair &amp; Install</h3><p>Cooling out? We repair all brands and install efficient new systems that lower your bills.</p></div>
+      <div class="svc"><div class="ic">🛠️</div><h3>Maintenance Plans</h3><p>Seasonal tune-ups that prevent breakdowns and keep your system under warranty.</p></div>
+      <div class="svc"><div class="ic">💨</div><h3>Air Quality</h3><p>Filters, humidifiers, and duct cleaning for cleaner, healthier air at home.</p></div>
+      <div class="svc"><div class="ic">🌡️</div><h3>Smart Thermostats</h3><p>Save money with smart thermostat installs and setup — done right the first time.</p></div>
+      <div class="svc"><div class="ic">🚨</div><h3>24/7 Emergency</h3><p>Heat or AC fail at 2am? We're on call around the clock, all year long.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="ey">Why Summit</div>
+    <h2>Neighbors trust us for a reason</h2>
+    <div class="grid g2" style="margin-top:36px">
+      <div class="feat"><div class="chk">✓</div><div><h4>Upfront, honest pricing</h4><p>You approve the price before we start. No surprise fees, ever.</p></div></div>
+      <div class="feat"><div class="chk">✓</div><div><h4>Same-day service</h4><p>Most repairs handled the same day you call. We respect your time.</p></div></div>
+      <div class="feat"><div class="chk">✓</div><div><h4>Licensed &amp; insured</h4><p>Background-checked, certified technicians you can feel safe letting in.</p></div></div>
+      <div class="feat"><div class="chk">✓</div><div><h4>Satisfaction guaranteed</h4><p>If it's not right, we make it right. That's the Summit promise.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="ey">Reviews</div>
+    <h2>What your neighbors are saying</h2>
+    <div class="grid g3" style="margin-top:36px">
+      <div class="rev"><span class="stars">★★★★★</span><p>"Furnace died on the coldest night of the year. Summit had someone out in under two hours and fixed it for a fair price. Lifesavers."</p><div class="who">— Maria G.</div><div class="loc">Dearborn, MI</div></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"Replaced our whole AC system. Clean work, on time, and the new unit cut our summer bill in half. Highly recommend."</p><div class="who">— James T.</div><div class="loc">Dearborn Heights, MI</div></div>
+      <div class="rev"><span class="stars">★★★★★</span><p>"Honest and professional. They could've sold me a new furnace but fixed the one I had instead. I'll never call anyone else."</p><div class="who">— Sandra K.</div><div class="loc">Allen Park, MI</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="area" id="area">
+  <div class="wrap">
+    <div class="ey">Service Area</div>
+    <h2>Proudly serving Metro Detroit</h2>
+    <p class="sub">If you're in the area and need heating or cooling help, we've got you covered.</p>
+    <div class="chips">
+      <span class="chip">Dearborn</span><span class="chip">Dearborn Heights</span><span class="chip">Allen Park</span>
+      <span class="chip">Taylor</span><span class="chip">Westland</span><span class="chip">Livonia</span>
+      <span class="chip">Detroit</span><span class="chip">Southgate</span><span class="chip">Lincoln Park</span><span class="chip">Wyandotte</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="ey" style="color:#bfdbfe">Get Started</div>
+    <h2>Need heating or cooling help today?</h2>
+    <p>Call now for fast, friendly service — or book a free estimate and we'll come to you.</p>
+    <div class="hcta" style="justify-content:center">
+      <a href="tel:+13135550199" class="btn">📞 Call (313) 555-0199</a>
+      <a href="#" class="btn btn-blue">Book Free Estimate</a>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div><b style="font-size:18px">❄ Summit Heating &amp; Cooling</b><br>Honest HVAC service for Metro Detroit since 2009.</div>
+    <div><b>Contact</b><br>(313) 555-0199<br>service@summithvac.com</div>
+    <div><b>Hours</b><br>Open 24/7 · 365 days a year</div>
+  </div>
+  <div class="fnote">© 2026 Summit Heating &amp; Cooling · Dearborn, MI · Licensed &amp; insured · This is a sample demo site built by Elitron Labs.</div>
+</div></footer>
+
+<a href="tel:+13135550199" class="stickycall">📞 Tap to Call — (313) 555-0199</a>
+
+</body>
+</html>
