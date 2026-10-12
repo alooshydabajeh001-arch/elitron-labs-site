@@ -1,0 +1,77 @@
+# Elitron Labs website redesign — October 2026
+
+Branch: `redesign/2026-10`. Production (`main` → www.elitronlabs.io) is untouched until Ali approves the merge.
+
+## 1. Audit of the previous site (main @ f0a4a37)
+**Worked well:** fast static HTML/CSS/JS with no dependencies; a clear free-preview offer; honest labels on concept
+demos (from the earlier fix); real contact details; a working Summit HVAC demo.
+
+**Problems found**
+- Positioning: "Websites & AI Automation for Local Businesses" and "Your customers are searching…" framed the company as
+  a low-cost local web agency, with nothing for software or automation buyers.
+- **Contact form was broken by design:** `action="mailto:…" method="post"` depends on the visitor's mail client.
+  Most browsers open a blank email or nothing, and no lead is recorded.
+- Unsupported claims: "live in 5–7 days", "24/7", "never sleeps", "runs on autopilot", "ranks on Google".
+- Visuals: emoji icons, gradient text-blocks as project thumbnails, no imagery.
+- SEO/tech: no canonical, OG, sitemap, robots or structured data; no security headers; no favicon; generic titles.
+- Accessibility: menu button without a label or `aria-expanded`; no skip link or visible focus styles; `onclick`
+  attributes; reveal animations ignored reduced-motion.
+
+## 2. Decision: keep plain HTML/CSS/JS (no Next.js migration)
+A static site with nine pages and one form doesn't need a framework. Staying static keeps it fast (no hydration),
+cheap to host, and simple for Ali to edit. Shared header and footer live in `partials/`; `npm run sync` copies them
+into each page. The one dynamic piece is a Vercel serverless function (`api/contact.js`).
+
+## 3. What changed
+| Area | Change |
+|---|---|
+| Positioning & copy | All pages rewritten around "Intelligent Technology. Real Business Growth." Requested replacements applied. Removed or softened unverifiable claims. |
+| Design system | `styles.css` rebuilt: tokens (#080F1E / #111C30 / #4B8BFF / #8A7CFF / #CBD5E1), Geist variable font (self-hosted), components, WCAG-checked contrast (body 11.5:1, muted 7.4:1, button text 4.9:1). |
+| Navigation | Home · Solutions · Our Work · Industries · About · Contact, plus a primary "Book a Discovery Call". Accessible mobile menu. |
+| Home | Cinematic hero (video over a poster), 4 solution cards, **interactive automation demo** (5 steps, synthetic data, runs in-browser), industries, labelled work, process with deliverables and approval points, "Why", final CTA. |
+| New pages | `industries.html`, `privacy.html`, `terms.html`, `404.html`. |
+| Work | Status system (Live / Internal / Prototype / Concept) with filters. Fictional brands are called fictional. LIGHTNX is shown for brand/web only, with a link to its public site. |
+| Contact | Two paths. **A:** Free Website Preview (business, site, contact, industry, goal). **B:** Discovery Call (organization, inquiry type, problem, integrations, timeline, budget). Consent checkbox with privacy link. |
+| Lead intake | `POST /api/contact`: origin check, JSON-only, size limit, honeypot plus minimum fill time, per-IP rate limit, strict server-side validation, formula-injection guard, retries with backoff, HMAC-signed webhook, optional Resend email. Reports success only after a destination accepts the lead. |
+| SEO | Unique titles and descriptions, canonical, OG/Twitter tags, Organization JSON-LD, `sitemap.xml`, `robots.txt`, one H1 per page. |
+| Security | `vercel.json`: strict CSP (no inline script/style on redesigned pages), HSTS, nosniff, frame DENY, Referrer-Policy, Permissions-Policy, COOP. A looser CSP applies only to the legacy Summit HVAC demo page. |
+| Analytics | None added. `app.js` fires `elitron:track` DOM events on CTA clicks, demo steps and successful submissions. Nothing is sent until an approved, consent-aware provider is wired to them. |
+
+## 4. Required configuration before the form can go live (Ali)
+The endpoint returns 503 until **at least one** destination is configured. When that happens, the page shows the email and
+phone fallback and keeps what the visitor typed. Set these in Vercel → elitron-labs-site → Settings → Environment Variables:
+
+| Variable | Purpose |
+|---|---|
+| `LEAD_WEBHOOK_URL` | n8n (or other) webhook that receives the lead JSON |
+| `LEAD_WEBHOOK_SECRET` | HMAC key. Verify `X-Elitron-Signature: sha256=HMAC(secret, timestamp + "." + body)` and `X-Elitron-Timestamp` in n8n |
+| `RESEND_API_KEY` + `LEAD_NOTIFY_FROM` | Optional email notification (sender domain must be verified in Resend) |
+| `LEAD_NOTIFY_TO` | Defaults to admin@elitronlabs.io |
+| `ALLOWED_ORIGINS` | Optional extra origins (same-origin previews are already allowed) |
+
+Alternative already in the repo history: the Apps Script + private Sheet intake in
+`remediation/elitronlabs-inquiry/intake/` (REV-001). Its web-app URL could be used as the webhook target behind a
+small adapter. Pick one destination. Don't run both.
+
+## 5. Items for Ali to confirm
+1. **Prices** on Solutions → "Digital Presence: from $799 + optional $79/mo" are carried over from the old site.
+   Confirm they're still current (task queue notes a newer Motown offer price).
+2. **Timeline language:** "Standard websites can often launch within 1–2 weeks of design approval" replaces "5–7 days".
+3. **Founder section** (About) names Ali and makes no credential claims. Remove it or extend it with verified background.
+4. **Engineering background line** on About and Home ("electrical and computer engineering…") comes from Ali's brief.
+5. **Privacy and Terms** are plain-language drafts. Have counsel review them before relying on them.
+6. **LIGHTNX card:** brand and web work only, no CAGE/UEI or defense details, links to the public site. Remove it if
+   you'd rather not cross-link the two companies.
+
+## 6. Testing
+- `npm test` → 16/16 pass (validation, spam, consent, formula guard, origin/method/content-type, signed webhook,
+  retries, 502 on sink failure, rate limit, 503 when unconfigured).
+- Local browser checks (Chrome via the dev server with production headers): no console errors or CSP violations;
+  demo flow end to end with HTML-escaping verified; form validation and focus management; 503 fallback message;
+  mobile menu open/close/Escape; no horizontal scroll at 375px; video not loaded on mobile.
+- Link and anchor checker: 0 broken internal links, anchors or icon references; one H1 per page; all images have alt.
+- Lighthouse and Core Web Vitals: measured on the Vercel preview (see the PR description).
+
+## 7. Rollback
+Production is unaffected until merge. After merge, use "Instant Rollback" to the previous production deployment in
+Vercel, or revert the merge commit.

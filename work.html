@@ -1,45 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Work — Elitron Labs AI</title>
-<meta name="description" content="A sample of websites, apps, and AI systems built by Elitron Labs.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Work, Prototypes &amp; Technology | Elitron Labs</title>
+<meta name="description" content="Live projects, internal builds, working prototypes and concept designs by Elitron Labs, each clearly labelled.">
+<link rel="canonical" href="https://www.elitronlabs.io/work.html">
+<meta name="theme-color" content="#080F1E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elitron Labs">
+<meta property="og:title" content="Our Work — Elitron Labs">
+<meta property="og:description" content="Live projects, internal builds, working prototypes and concept designs, each clearly labelled.">
+<meta property="og:url" content="https://www.elitronlabs.io/work.html">
+<meta property="og:image" content="https://www.elitronlabs.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="wrap"><nav>
-    <a href="index.html" class="logo"><div class="mark">E</div><div>Elitron<small>LABS AI</small></div></a>
-    <div class="navlinks"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html" class="active">Work</a><a href="about.html">About</a><a href="contact.html" class="btn">Free Preview</a></div>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  </nav></div>
-  <div class="mobile" id="mobileNav"><a href="index.html">Home</a><a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Free Preview</a></div>
-</header>
-
-<div class="page-head">
-  <div class="wrap"><div class="eyebrow">Our Work</div><h1 class="grad-text">Built to perform</h1>
-    <p>Concept builds, live demos and the in-house systems we run on our own businesses.</p></div>
-</div>
-
-<section>
-  <div class="wrap">
-    <div class="grid g3">
-      <div class="work-card reveal"><div class="thumb">AI VOICE</div><div class="body"><div class="tag">In-house · Automation</div><h3>AI Voice Agent</h3><p>Automated appointment booking &amp; lead management — answers calls 24/7.</p></div></div>
-      <div class="work-card reveal"><div class="thumb t2">FinFlow</div><div class="body"><div class="tag">Concept design · Web &amp; Mobile</div><h3>FinFlow</h3><p>Fintech &amp; digital banking application with a clean, trustworthy interface.</p></div></div>
-      <div class="work-card reveal"><div class="thumb t3">STRYDE</div><div class="body"><div class="tag">Concept design · Mobile App</div><h3>STRYDE</h3><p>Athlete performance &amp; fitness tracking app with real-time dashboards.</p></div></div>
-      <div class="work-card reveal"><div class="thumb t4">Summit HVAC</div><div class="body"><div class="tag">Concept demo · Local Business</div><h3>Summit HVAC <a href="demo-summit-hvac.html" style="color:var(--cyan)">↗ live demo</a></h3><p>Concept lead-generation website + booking flow for a home-services business (fictional brand).</p></div></div>
-      <div class="work-card reveal"><div class="thumb t5">Bloom Spa</div><div class="body"><div class="tag">Concept demo · Local Business</div><h3>Bloom Day Spa</h3><p>Concept booking-focused site with online scheduling and automated reminders (fictional brand).</p></div></div>
-      <div class="work-card reveal"><div class="thumb t6">LIGHTNX</div><div class="body"><div class="tag">In-house · Brand &amp; Web</div><h3>LIGHTNX Defense</h3><p>Brand identity and web presence for a technology defense venture.</p></div></div>
+<!-- @header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Elitron Labs home">
+      <svg class="brand-mark" aria-hidden="true"><use href="assets/icons.svg#mark"/></svg>
+      <span>Elitron Labs<small>MICHIGAN · USA</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Solutions</a>
+      <a href="work.html" aria-current="page">Our Work</a>
+      <a href="industries.html">Industries</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html?path=discovery" class="btn btn-primary btn-sm" data-track="cta_discovery_nav">Book a Discovery Call</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
     </div>
-    <div class="center" style="margin-top:46px"><a href="contact.html" class="btn reveal">Start your project</a></div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <a href="index.html">Home</a>
+    <a href="services.html">Solutions</a>
+    <a href="work.html" aria-current="page">Our Work</a>
+    <a href="industries.html">Industries</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_discovery_mobile">Book a Discovery Call</a>
+    <a href="contact.html?path=preview" class="btn btn-secondary" data-track="cta_preview_mobile">Get a Free Website Preview</a>
+  </nav>
+</header>
+<!-- /@header -->
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Our Work</p>
+    <h1 class="display">Our Work, Prototypes &amp; Technology.</h1>
+    <p class="lede">What we've built for our own businesses, working demos you can try, and design concepts. Each one is labelled so you know exactly what you're looking at.</p>
+    <div class="legend mt-m" aria-label="Status labels">
+      <span><span class="status status--live">Live</span> In production and publicly available</span>
+      <span><span class="status status--internal">Internal</span> Built for our own or affiliated businesses</span>
+      <span><span class="status status--prototype">Prototype</span> Working demo with sample data</span>
+      <span><span class="status status--concept">Concept</span> Design exploration, not a shipped product</span>
+    </div>
   </div>
 </section>
 
-<footer><div class="wrap foot">
-  <a href="index.html" class="logo"><div class="mark">E</div><div>Elitron<small>LABS AI</small></div></a>
-  <div>© 2026 Elitron Labs LLC · Michigan, USA · admin@elitronlabs.io · (313) 242-7470</div>
-</div></footer>
-<script src="app.js"></script>
+<section class="section section--tight">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button class="filter" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" type="button" data-filter="live" aria-pressed="false">Live</button>
+      <button class="filter" type="button" data-filter="internal" aria-pressed="false">Internal</button>
+      <button class="filter" type="button" data-filter="prototype" aria-pressed="false">Prototypes</button>
+      <button class="filter" type="button" data-filter="concept" aria-pressed="false">Concepts</button>
+    </div>
+    <div class="grid g3">
+
+      <article class="card project reveal" id="lead-automation" data-status="prototype">
+        <div class="project-visual"><img src="assets/img/workflow-path-720.webp" alt="" width="720" height="403" loading="lazy" decoding="async"></div>
+        <div class="project-body">
+          <span class="status status--prototype">Working prototype</span>
+          <h3>Lead Automation Demo</h3>
+          <p class="muted">Interactive walk-through of an inquiry-to-booking workflow: qualification, CRM record, appointment offer and confirmation. Runs in the browser with synthetic data.</p>
+          <p class="meta">Workflow design · Front-end · Automation logic</p>
+          <a href="index.html#demo" class="link-arrow">Try the demo <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="summit-hvac" data-status="prototype">
+        <div class="project-visual"><div class="mock mock--hvac" aria-hidden="true"><div class="bar w40"></div><div class="row grow"><div class="blk"></div><div class="blk f60"></div></div><div class="row h30"><div class="blk"></div><div class="blk"></div><div class="blk"></div></div></div></div>
+        <div class="project-body">
+          <span class="status status--prototype">Working prototype</span>
+          <h3>Summit HVAC</h3>
+          <p class="muted">Lead-generation website and booking flow for a home-services business. Summit HVAC is a fictional brand created to demonstrate the format.</p>
+          <p class="meta">Web design · Local SEO structure · Booking flow</p>
+          <a href="demo-summit-hvac.html" class="link-arrow">Open the demo <svg aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="voice-agent" data-status="internal">
+        <div class="project-visual"><div class="mock mock--voice" aria-hidden="true"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="project-body">
+          <span class="status status--internal">Internal project</span>
+          <h3>AI Voice Agent</h3>
+          <p class="muted">A voice agent for appointment booking and lead capture, developed and tested on our own operations before we offer it to clients.</p>
+          <p class="meta">Voice AI · Scheduling · Lead capture</p>
+          <a href="contact.html?path=discovery&amp;type=AI%20Chatbot%20%2F%20Voice%20Agent" class="link-arrow">Ask for a walkthrough <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="lightnx" data-status="internal">
+        <div class="project-visual"><div class="mock mock--brand" aria-hidden="true"><span class="wordmark">LIGHTNX</span></div></div>
+        <div class="project-body">
+          <span class="status status--internal">Internal · Live site</span>
+          <h3>LIGHTNX Defense</h3>
+          <p class="muted">Brand identity and public website for an affiliated company. Shown for the design and web work only.</p>
+          <p class="meta">Brand identity · Web design · Development</p>
+          <a href="https://www.lightnxdefense.com/" class="link-arrow" rel="noopener" target="_blank">Visit the site <span class="sr-only">(opens in a new tab)</span><svg aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="elitron-site" data-status="live">
+        <div class="project-visual"><img src="assets/img/hero-lattice-720.webp" alt="" width="720" height="403" loading="lazy" decoding="async"></div>
+        <div class="project-body">
+          <span class="status status--live">Live</span>
+          <h3>Elitron Labs website</h3>
+          <p class="muted">This site: a hand-built static front end with an interactive automation demo, server-side lead intake and original generated media.</p>
+          <p class="meta">Design system · Front-end · Serverless API · Media production</p>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="finflow" data-status="concept">
+        <div class="project-visual"><div class="mock mock--fin" aria-hidden="true"><div class="row grow"><div class="blk f35"></div><div class="blk"></div></div><div class="row h30"><div class="blk"></div><div class="blk"></div></div></div></div>
+        <div class="project-body">
+          <span class="status status--concept">Concept design</span>
+          <h3>FinFlow</h3>
+          <p class="muted">Interface concept for a fintech and digital banking app, exploring a calm, trustworthy layout for accounts and payments.</p>
+          <p class="meta">UI/UX concept · Web &amp; mobile</p>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="stryde" data-status="concept">
+        <div class="project-visual"><div class="mock mock--fit" aria-hidden="true"><div class="row grow"><div class="phone"><div class="bar"></div><div class="blk"></div><div class="blk"></div></div><div class="phone"><div class="bar w60"></div><div class="blk"></div></div></div></div></div>
+        <div class="project-body">
+          <span class="status status--concept">Concept design</span>
+          <h3>STRYDE</h3>
+          <p class="muted">Mobile app concept for athlete performance and training tracking, with dashboard-style progress views.</p>
+          <p class="meta">UI/UX concept · Mobile app</p>
+        </div>
+      </article>
+
+      <article class="card project reveal" id="bloom" data-status="concept">
+        <div class="project-visual"><div class="mock mock--spa" aria-hidden="true"><div class="bar w40"></div><div class="row grow"><div class="blk"></div></div><div class="row h30"><div class="blk"></div><div class="blk"></div></div></div></div>
+        <div class="project-body">
+          <span class="status status--concept">Concept design</span>
+          <h3>Bloom Day Spa</h3>
+          <p class="muted">Booking-focused website concept with online scheduling and appointment reminders. Bloom Day Spa is a fictional brand.</p>
+          <p class="meta">Web design concept · Booking UX</p>
+        </div>
+      </article>
+
+    </div>
+    <p class="muted small mt-m">We don't publish client results, testimonials or metrics we can't verify. Ask us about the work behind any project above.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2 id="cta-title" class="h2">Have something you want built?</h2>
+      <p class="lede">Tell us about it. You'll get an honest view of what it would take.</p>
+      <div class="btn-row">
+        <a href="contact.html?path=discovery" class="btn btn-primary">Tell Us About Your Project</a>
+        <a href="contact.html?path=preview" class="btn btn-secondary">Get a Free Website Preview</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- @footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="brand" aria-label="Elitron Labs home">
+          <svg class="brand-mark" aria-hidden="true"><use href="assets/icons.svg#mark"/></svg>
+          <span>Elitron Labs<small>MICHIGAN · USA</small></span>
+        </a>
+        <p>A Michigan-based technology studio building websites, AI-powered software and business automation.</p>
+      </div>
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="services.html#websites">Website Design &amp; Development</a></li>
+          <li><a href="services.html#automation">AI Automation &amp; Integration</a></li>
+          <li><a href="services.html#agents">AI Agents &amp; Voice</a></li>
+          <li><a href="services.html#software">Custom Software</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:admin@elitronlabs.io">admin@elitronlabs.io</a></li>
+          <li><a href="tel:+13132427470">(313) 242-7470</a></li>
+          <li><a href="contact.html?path=discovery">Book a discovery call</a></li>
+          <li><a href="contact.html?path=preview">Free website preview</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Elitron Labs LLC · Michigan, USA</span>
+      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="app.js" defer></script>
 </body>
 </html>

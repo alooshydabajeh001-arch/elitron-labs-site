@@ -1,113 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elitron Labs AI — Websites & AI Automation for Local Businesses</title>
-<meta name="description" content="Elitron Labs builds fast, modern websites and AI automation systems that help local businesses get found on Google and win more customers. Michigan-based.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elitron Labs — AI Software Development &amp; Business Automation | Michigan</title>
+<meta name="description" content="Elitron Labs is a Michigan-based technology studio building high-performance websites, AI-powered applications and intelligent automation systems for growing businesses.">
+<link rel="canonical" href="https://www.elitronlabs.io/">
+<meta name="theme-color" content="#080F1E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Elitron Labs">
+<meta property="og:title" content="Elitron Labs — Intelligent Technology. Real Business Growth.">
+<meta property="og:description" content="Custom software, AI automation and digital experiences, built in Michigan.">
+<meta property="og:url" content="https://www.elitronlabs.io/">
+<meta property="og:image" content="https://www.elitronlabs.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="assets/img/hero-lattice-1344.webp" imagesrcset="assets/img/hero-lattice-720.webp 720w, assets/img/hero-lattice-1344.webp 1344w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Elitron Labs LLC","url":"https://www.elitronlabs.io/","logo":"https://www.elitronlabs.io/assets/favicon.svg","email":"admin@elitronlabs.io","telephone":"+1-313-242-7470","address":{"@type":"PostalAddress","addressRegion":"MI","addressCountry":"US"},"description":"Michigan-based technology studio building websites, AI-powered software and business automation."}
+</script>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <nav>
-      <a href="index.html" class="logo"><div class="mark">E</div><div>Elitron<small>LABS AI</small></div></a>
-      <div class="navlinks">
-        <a href="index.html" class="active">Home</a>
-        <a href="services.html">Services</a>
-        <a href="work.html">Work</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="btn">Free Preview</a>
-      </div>
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+<!-- @header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a href="index.html" class="brand" aria-label="Elitron Labs home">
+      <svg class="brand-mark" aria-hidden="true"><use href="assets/icons.svg#mark"/></svg>
+      <span>Elitron Labs<small>MICHIGAN · USA</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Solutions</a>
+      <a href="work.html">Our Work</a>
+      <a href="industries.html">Industries</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <div class="nav-cta">
+      <a href="contact.html?path=discovery" class="btn btn-primary btn-sm" data-track="cta_discovery_nav">Book a Discovery Call</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
+    </div>
   </div>
-  <div class="mobile" id="mobileNav">
-    <a href="index.html">Home</a><a href="services.html">Services</a>
-    <a href="work.html">Work</a><a href="about.html">About</a><a href="contact.html">Free Preview</a>
-  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="services.html">Solutions</a>
+    <a href="work.html">Our Work</a>
+    <a href="industries.html">Industries</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_discovery_mobile">Book a Discovery Call</a>
+    <a href="contact.html?path=preview" class="btn btn-secondary" data-track="cta_preview_mobile">Get a Free Website Preview</a>
+  </nav>
 </header>
+<!-- /@header -->
 
-<section class="hero">
-  <div class="glow a"></div><div class="glow b"></div>
+<main id="main">
+
+<!-- A. Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-media" aria-hidden="true">
+    <img src="assets/img/hero-lattice-1344.webp" srcset="assets/img/hero-lattice-720.webp 720w, assets/img/hero-lattice-1344.webp 1344w" sizes="100vw" alt="" width="1344" height="752" fetchpriority="high">
+    <video data-hero-video muted loop playsinline preload="none" poster="assets/img/hero-lattice-1344.webp" width="1280" height="720">
+      <source data-src="assets/media/hero-loop.webm" type="video/webm">
+      <source data-src="assets/media/hero-loop.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="wrap">
-    <div class="pill"><span class="dot"></span> Michigan-based · AI-powered web &amp; automation studio</div>
-    <h1>Your customers are searching.<br><span class="grad-text">Make sure they find you.</span></h1>
-    <p class="sub">Elitron Labs builds fast, modern websites and AI automation systems that help local businesses get found on Google, capture more leads, and run on autopilot — without the agency price tag.</p>
-    <div class="hero-cta">
-      <a href="contact.html" class="btn">Get a Free Website Preview</a>
-      <a href="work.html" class="btn btn-ghost">See Our Work</a>
+    <div class="hero-content">
+      <p class="eyebrow">AI Software · Automation · Digital Experiences</p>
+      <h1 id="hero-title" class="display">Intelligent Technology. <span class="grad-text">Real Business Growth.</span></h1>
+      <p class="sub">Custom Software, AI Automation &amp; Digital Experiences.</p>
+      <p class="lede">Elitron Labs is a Michigan-based technology studio building high-performance websites, AI-powered applications and intelligent automation systems that help businesses attract customers, streamline operations and grow.</p>
+      <div class="btn-row">
+        <a href="#solutions" class="btn btn-primary" data-track="cta_explore_hero">Explore Our Solutions <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a href="contact.html?path=discovery" class="btn btn-secondary" data-track="cta_discovery_hero">Book a Discovery Call</a>
+      </div>
+      <div class="hero-meta">
+        <span><svg aria-hidden="true"><use href="assets/icons.svg#pin"/></svg>Based in Michigan</span>
+        <span><svg aria-hidden="true"><use href="assets/icons.svg#globe"/></svg>Need just a website? <a href="contact.html?path=preview" class="link-arrow" data-track="cta_preview_hero">Get a free preview</a></span>
+      </div>
     </div>
-    <div class="trust">
-      <div><b>In-house</b> Proven on our own businesses first</div>
-      <div><b>5–7 days</b> Target launch</div>
-      <div><b>AI-native</b> Built-in automation</div>
+  </div>
+  <button class="media-toggle" type="button" data-media-toggle hidden aria-pressed="false">
+    <svg aria-hidden="true"><use href="assets/icons.svg#pause"/></svg><span>Pause background</span>
+  </button>
+</section>
+
+<!-- B. Solutions -->
+<section class="section" id="solutions" aria-labelledby="solutions-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="num">01</span> Solutions</p>
+      <h2 id="solutions-title" class="h2">Technology That Works Together.</h2>
+      <p class="lede">A website brings customers in. Automation and AI handle what happens next. Custom software holds it all together. We build each piece, or the whole system.</p>
+    </div>
+    <div class="grid g2">
+      <article class="card solution reveal">
+        <div class="solution-media"><img src="assets/img/svc-web-720.webp" srcset="assets/img/svc-web-720.webp 720w, assets/img/svc-web-1344.webp 1344w" sizes="(max-width:760px) 100vw, 50vw" alt="Laptop and phone displaying an abstract website layout" width="720" height="403" loading="lazy" decoding="async"></div>
+        <div class="solution-body">
+          <h3>Website Design &amp; Development</h3>
+          <p>Make a strong first impression with a fast, modern website built around your business and designed to turn visitors into enquiries.</p>
+          <ul class="checklist">
+            <li>Responsive, custom design</li><li>Website development</li><li>SEO foundations</li><li>Booking &amp; contact integrations</li><li>Hosting &amp; maintenance options</li>
+          </ul>
+          <a href="services.html#websites" class="link-arrow">Learn more <span class="sr-only">about website design</span><svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card solution reveal">
+        <div class="solution-media"><img src="assets/img/svc-automation-720.webp" srcset="assets/img/svc-automation-720.webp 720w, assets/img/svc-automation-1344.webp 1344w" sizes="(max-width:760px) 100vw, 50vw" alt="Connected glass modules representing email, calendar, documents and data" width="720" height="403" loading="lazy" decoding="async"></div>
+        <div class="solution-body">
+          <h3>AI Automation &amp; Integration</h3>
+          <p>Connect the systems you already use and automate repetitive work, so your team spends its time on the jobs that need people.</p>
+          <ul class="checklist">
+            <li>CRM automation</li><li>Email &amp; SMS workflows</li><li>Lead capture &amp; routing</li><li>Document processing</li><li>n8n &amp; API integrations</li><li>Reporting workflows</li>
+          </ul>
+          <a href="services.html#automation" class="link-arrow">Learn more <span class="sr-only">about automation</span><svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card solution reveal">
+        <div class="solution-media"><img src="assets/img/svc-agents-720.webp" srcset="assets/img/svc-agents-720.webp 720w, assets/img/svc-agents-1344.webp 1344w" sizes="(max-width:760px) 100vw, 50vw" alt="Light waveform flowing toward a phone and chat bubble" width="720" height="403" loading="lazy" decoding="async"></div>
+        <div class="solution-body">
+          <h3>AI Agents &amp; Voice Solutions</h3>
+          <p>Intelligent assistants that help answer questions, qualify leads, schedule appointments and support how you talk to customers.</p>
+          <ul class="checklist">
+            <li>AI website chatbots</li><li>AI voice agents</li><li>Appointment scheduling</li><li>Customer inquiry handling</li><li>Knowledge-based assistants</li><li>Human escalation &amp; approvals</li>
+          </ul>
+          <a href="services.html#agents" class="link-arrow">Learn more <span class="sr-only">about AI agents</span><svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card solution reveal">
+        <div class="solution-media"><img src="assets/img/svc-software-720.webp" srcset="assets/img/svc-software-720.webp 720w, assets/img/svc-software-1344.webp 1344w" sizes="(max-width:760px) 100vw, 50vw" alt="Layered glass application dashboards" width="720" height="403" loading="lazy" decoding="async"></div>
+        <div class="solution-body">
+          <h3>Custom Software &amp; AI Applications</h3>
+          <p>Purpose-built applications and digital platforms shaped around how your business actually operates.</p>
+          <ul class="checklist">
+            <li>Custom web applications</li><li>SaaS products</li><li>Customer portals</li><li>Internal dashboards</li><li>API integrations</li><li>AI-powered features</li>
+          </ul>
+          <a href="services.html#software" class="link-arrow">Learn more <span class="sr-only">about custom software</span><svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<section>
+<!-- C. Interactive automation demo -->
+<section class="section section--slate" id="demo" aria-labelledby="demo-title">
   <div class="wrap">
-    <div class="eyebrow reveal">What We Do</div>
-    <h2 class="reveal">Two things, done exceptionally well</h2>
-    <p class="lead reveal">We pair a high-converting website with AI automation behind it — so your online presence doesn't just look good, it books appointments and answers customers for you.</p>
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="num">02</span> Automation in action</p>
+      <h2 id="demo-title" class="h2">See What Intelligent Automation Can Do.</h2>
+      <p class="lede">Follow one service request from a website form to a booked appointment. Edit the inquiry, then step through what an automated workflow does with it.</p>
+    </div>
+    <div class="demo reveal" data-demo>
+      <div class="demo-side">
+        <span class="demo-badge">Demonstration · synthetic data</span>
+        <ol class="demo-steps" aria-label="Workflow steps">
+          <li class="demo-step active" data-step-label="0"><span class="dot">1</span><span class="lbl">Customer inquiry</span></li>
+          <li class="demo-step" data-step-label="1"><span class="dot">2</span><span class="lbl">AI qualification</span></li>
+          <li class="demo-step" data-step-label="2"><span class="dot">3</span><span class="lbl">CRM update</span></li>
+          <li class="demo-step" data-step-label="3"><span class="dot">4</span><span class="lbl">Appointment booking</span></li>
+          <li class="demo-step" data-step-label="4"><span class="dot">5</span><span class="lbl">Confirmation</span></li>
+        </ol>
+        <div class="demo-visual" aria-hidden="true">
+          <img src="assets/img/workflow-path-720.webp" alt="" width="720" height="403" loading="lazy" decoding="async">
+          <video data-lazy-video muted loop playsinline preload="none" poster="assets/img/workflow-path-720.webp" width="1280" height="720">
+            <source data-src="assets/media/workflow-loop.webm" type="video/webm">
+            <source data-src="assets/media/workflow-loop.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="demo-main">
+        <div class="demo-panel" data-demo-panel aria-live="polite">
+          <!-- Rendered by app.js. Fallback for no-JS: -->
+          <h3>How the workflow runs</h3>
+          <p>1. A visitor requests a service estimate. 2. The request is checked against your qualification rules. 3. A CRM record is created. 4. The customer is offered open appointment times. 5. The booking is confirmed and your team is notified.</p>
+        </div>
+        <div class="demo-nav">
+          <button class="btn btn-secondary btn-sm" type="button" data-demo-prev hidden>Previous</button>
+          <button class="btn btn-primary btn-sm" type="button" data-demo-next hidden>Next step <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></button>
+        </div>
+        <p class="demo-note">Runs entirely in your browser with made-up data. Nothing is sent, stored or delivered to anyone. A production build connects to your real CRM and calendar, with your rules and human review where you want it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- D. Industries -->
+<section class="section" aria-labelledby="ind-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="num">03</span> Who we help</p>
+      <h2 id="ind-title" class="h2">Built for businesses at different stages.</h2>
+      <p class="lede">From a local service company that needs to be found online to a growing team that needs custom software, the work starts with the problem, not the tool.</p>
+    </div>
+    <div class="grid g4">
+      <article class="card industry reveal">
+        <div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#wrench"/></svg></div>
+        <h3>Local service businesses</h3>
+        <p>Websites, local search visibility, call handling and appointment booking.</p>
+      </article>
+      <article class="card industry reveal">
+        <div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#briefcase"/></svg></div>
+        <h3>Professional services</h3>
+        <p>Client intake, document workflows and CRM automation.</p>
+      </article>
+      <article class="card industry reveal">
+        <div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#shop"/></svg></div>
+        <h3>E-commerce &amp; online</h3>
+        <p>Storefronts, customer-service automation and order workflows.</p>
+      </article>
+      <article class="card industry reveal">
+        <div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#chip"/></svg></div>
+        <h3>Engineering &amp; growing companies</h3>
+        <p>Internal dashboards, RFQ and quoting workflow prototypes, data integrations.</p>
+      </article>
+    </div>
+    <div class="mt-m reveal"><a href="industries.html" class="link-arrow">See use cases by industry <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- E. Selected work -->
+<section class="section section--slate" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="num">04</span> Selected work</p>
+      <h2 id="work-title" class="h2">Our Work, Prototypes &amp; Technology.</h2>
+      <p class="lede">Every project is labelled for what it is: a live project, an internal build, a working prototype or a concept design.</p>
+    </div>
     <div class="grid g3">
-      <div class="card reveal"><div class="ico">🌐</div><h3>Website Design &amp; Development</h3>
-        <p>Modern, mobile-first websites that load fast and turn visitors into customers.</p>
-        <ul><li>Custom design, built to convert</li><li>Google Business &amp; local SEO</li><li>Click-to-call &amp; contact forms</li><li>Live in 5–7 days</li></ul></div>
-      <div class="card reveal"><div class="ico">⚙️</div><h3>AI Automation &amp; Workflows</h3>
-        <p>Stop doing repetitive work. We automate the busywork that eats your day.</p>
-        <ul><li>Lead capture &amp; follow-up</li><li>Appointment booking on autopilot</li><li>CRM, email &amp; invoicing flows</li><li>n8n / Zapier-style integrations</li></ul></div>
-      <div class="card reveal"><div class="ico">🤖</div><h3>AI Chatbots &amp; Voice Agents</h3>
-        <p>A 24/7 assistant that answers questions, qualifies leads, and books jobs.</p>
-        <ul><li>Website chat that never sleeps</li><li>AI voice agent for missed calls</li><li>Answers FAQs instantly</li><li>Captures every lead, day or night</li></ul></div>
+      <article class="card project reveal">
+        <div class="project-visual"><div class="mock mock--hvac" aria-hidden="true"><div class="bar w40"></div><div class="row grow"><div class="blk"></div><div class="blk f60"></div></div><div class="row h30"><div class="blk"></div><div class="blk"></div><div class="blk"></div></div></div></div>
+        <div class="project-body">
+          <span class="status status--prototype">Working prototype</span>
+          <h3>Summit HVAC</h3>
+          <p class="muted">Lead-generation website and booking flow for a home-services business. Fictional brand, built as a demo.</p>
+          <a href="demo-summit-hvac.html" class="link-arrow">Open the demo <svg aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+        </div>
+      </article>
+      <article class="card project reveal">
+        <div class="project-visual"><div class="mock mock--voice" aria-hidden="true"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="project-body">
+          <span class="status status--internal">Internal project</span>
+          <h3>AI Voice Agent</h3>
+          <p class="muted">An in-house voice agent for appointment booking and lead capture, built on our own operations first.</p>
+          <a href="work.html#voice-agent" class="link-arrow">Details <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card project reveal">
+        <div class="project-visual"><div class="mock mock--fin" aria-hidden="true"><div class="row grow"><div class="blk f35"></div><div class="blk"></div></div><div class="row h30"><div class="blk"></div><div class="blk"></div></div></div></div>
+        <div class="project-body">
+          <span class="status status--concept">Concept design</span>
+          <h3>FinFlow</h3>
+          <p class="muted">Interface concept for a fintech and digital banking app. Design exploration, not a shipped product.</p>
+          <a href="work.html#finflow" class="link-arrow">Details <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
     </div>
-    <div class="center" style="margin-top:36px"><a href="services.html" class="btn btn-ghost reveal">Explore all services →</a></div>
+    <div class="mt-m reveal"><a href="work.html" class="link-arrow">View all work <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a></div>
   </div>
 </section>
 
-<section style="background:var(--bg2)">
+<!-- F. Process -->
+<section class="section" aria-labelledby="process-title">
   <div class="wrap">
-    <div class="eyebrow reveal">How It Works</div>
-    <h2 class="reveal">From first call to live in a week</h2>
-    <p class="lead reveal">No long contracts, no jargon. You see the result before you commit.</p>
-    <div class="steps">
-      <div class="step reveal"><div class="num">1</div><h4>Discovery</h4><p>We learn your business and what you want more of.</p></div>
-      <div class="step reveal"><div class="num">2</div><h4>Free Preview</h4><p>We design a real preview of your site — before you pay.</p></div>
-      <div class="step reveal"><div class="num">3</div><h4>Build &amp; Launch</h4><p>You approve it, we go live and connect automations.</p></div>
-      <div class="step reveal"><div class="num">4</div><h4>We Maintain It</h4><p>Updates, hosting, and support handled for you.</p></div>
+    <div class="sec-head reveal">
+      <p class="eyebrow"><span class="num">05</span> How we work</p>
+      <h2 id="process-title" class="h2">From Idea to Intelligent Execution.</h2>
+      <p class="lede">Clear deliverables and an approval point at every stage. You always know what is being built and why.</p>
     </div>
+    <ol class="timeline">
+      <li class="t-step reveal">
+        <span class="n">01</span>
+        <h3>Discover</h3>
+        <p>We learn your business, the tools you already use and the problem you want solved.</p>
+        <dl><div><dt>You get</dt><dd>A written scope and recommendation</dd></div><div><dt>You approve</dt><dd>Scope, budget range and timeline</dd></div></dl>
+      </li>
+      <li class="t-step reveal">
+        <span class="n">02</span>
+        <h3>Design</h3>
+        <p>We map the experience and show you the proposed solution before full build.</p>
+        <dl><div><dt>You get</dt><dd>Designs, a workflow map or a clickable prototype</dd></div><div><dt>You approve</dt><dd>The design and final scope</dd></div></dl>
+      </li>
+      <li class="t-step reveal">
+        <span class="n">03</span>
+        <h3>Build</h3>
+        <p>We develop the website, application or automation and test it against real use cases.</p>
+        <dl><div><dt>You get</dt><dd>A private staging version to review</dd></div><div><dt>You approve</dt><dd>Launch readiness</dd></div></dl>
+      </li>
+      <li class="t-step reveal">
+        <span class="n">04</span>
+        <h3>Launch &amp; Improve</h3>
+        <p>We deploy, monitor and refine, with ongoing support defined in your service agreement.</p>
+        <dl><div><dt>You get</dt><dd>Launch, handover notes and support options</dd></div><div><dt>Timing</dt><dd>Standard websites can often launch within 1–2 weeks of approval; custom software and AI systems are scheduled during scoping</dd></div></dl>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section>
+<!-- Why Elitron -->
+<section class="section section--slate" aria-labelledby="why-title">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="eyebrow"><span class="num">06</span> Why Elitron Labs</p>
+      <h2 id="why-title" class="h2 mt-s">Built Around Your Business. Engineered for What Comes Next.</h2>
+      <div class="why-list mt-m">
+        <div class="why-item"><div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#chip"/></svg></div><div><h3>Engineering-led problem solving</h3><p>Rooted in electrical and computer engineering. We start from how your systems actually work.</p></div></div>
+        <div class="why-item"><div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#layers"/></svg></div><div><h3>Right-sized solutions</h3><p>Custom where it matters, proven tools where they fit. No unnecessary complexity.</p></div></div>
+        <div class="why-item"><div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#shield"/></svg></div><div><h3>Thoughtful AI</h3><p>AI goes where it helps, with human review and approval steps where they matter.</p></div></div>
+        <div class="why-item"><div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#refresh"/></svg></div><div><h3>Ongoing improvement</h3><p>Modern design and software practices, with maintenance and support options after launch.</p></div></div>
+      </div>
+    </div>
+    <div class="frame reveal"><img src="assets/img/studio-bench-720.webp" srcset="assets/img/studio-bench-720.webp 720w, assets/img/studio-bench-1344.webp 1344w" sizes="(max-width:960px) 100vw, 50vw" alt="Circuit board and laptop on a dark workbench lit in blue" width="720" height="403" loading="lazy" decoding="async"></div>
+  </div>
+</section>
+
+<!-- G. Final CTA -->
+<section class="section" aria-labelledby="cta-title">
   <div class="wrap">
-    <div class="eyebrow reveal">Why Elitron</div>
-    <h2 class="reveal">Big-agency results, without the wait or the bill</h2>
-    <div class="grid g3" style="margin-top:40px">
-      <div class="card reveal"><div class="ico">⚡</div><h3>Fast</h3><p>Most sites live in 5–7 days. We move at the speed of AI, so you start getting customers sooner.</p></div>
-      <div class="card reveal"><div class="ico">💬</div><h3>Plain English</h3><p>No tech-speak. We explain everything simply and handle the complicated parts for you.</p></div>
-      <div class="card reveal"><div class="ico">📈</div><h3>Built to grow</h3><p>Your site is built to get found and convert — not just to look pretty. Outcomes, not vanity.</p></div>
+    <div class="cta reveal">
+      <h2 id="cta-title" class="h2">Your Business Has Potential. Let's Build the Technology to Match.</h2>
+      <p class="lede">Whether you need a professional website, intelligent automation or a custom software solution, let's explore what Elitron Labs can build for you.</p>
+      <div class="btn-row">
+        <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_project_final">Tell Us About Your Project <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        <a href="contact.html?path=preview" class="btn btn-secondary" data-track="cta_preview_final">Get a Free Website Preview</a>
+      </div>
+      <div class="contact-lines">
+        <a href="mailto:admin@elitronlabs.io"><svg aria-hidden="true"><use href="assets/icons.svg#mail"/></svg>admin@elitronlabs.io</a>
+        <a href="tel:+13132427470"><svg aria-hidden="true"><use href="assets/icons.svg#phone"/></svg>(313) 242-7470</a>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="cta-band reveal">
-  <div class="eyebrow">Get Started</div>
-  <h2>Want to see your website before you pay?</h2>
-  <p>Tell us about your business and we'll design a free preview — no commitment. Love it, we launch it. If not, no hard feelings.</p>
-  <a href="contact.html" class="btn">Request My Free Preview</a>
-  <div class="contact-row">
-    <a href="mailto:admin@elitronlabs.io">✉️ admin@elitronlabs.io</a>
-    <a href="tel:+13132427470">📞 (313) 242-7470</a>
-  </div>
-</div>
+</main>
 
-<footer><div class="wrap foot">
-  <a href="index.html" class="logo"><div class="mark">E</div><div>Elitron<small>LABS AI</small></div></a>
-  <div>© 2026 Elitron Labs LLC · Michigan, USA · admin@elitronlabs.io · (313) 242-7470</div>
-</div></footer>
-<script src="app.js"></script>
+<!-- @footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="brand" aria-label="Elitron Labs home">
+          <svg class="brand-mark" aria-hidden="true"><use href="assets/icons.svg#mark"/></svg>
+          <span>Elitron Labs<small>MICHIGAN · USA</small></span>
+        </a>
+        <p>A Michigan-based technology studio building websites, AI-powered software and business automation.</p>
+      </div>
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="services.html#websites">Website Design &amp; Development</a></li>
+          <li><a href="services.html#automation">AI Automation &amp; Integration</a></li>
+          <li><a href="services.html#agents">AI Agents &amp; Voice</a></li>
+          <li><a href="services.html#software">Custom Software</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:admin@elitronlabs.io">admin@elitronlabs.io</a></li>
+          <li><a href="tel:+13132427470">(313) 242-7470</a></li>
+          <li><a href="contact.html?path=discovery">Book a discovery call</a></li>
+          <li><a href="contact.html?path=preview">Free website preview</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Elitron Labs LLC · Michigan, USA</span>
+      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="app.js" defer></script>
 </body>
 </html>

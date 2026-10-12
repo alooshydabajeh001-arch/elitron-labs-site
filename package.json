@@ -1,0 +1,10 @@
+{
+  "name": "elitron-labs-site",
+  "private": true,
+  "description": "Elitron Labs marketing site: static HTML/CSS/JS + one Vercel serverless function.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "sync": "node scripts/sync-partials.mjs"
+  }
+}
