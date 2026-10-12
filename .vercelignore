@@ -1,0 +1,6 @@
+# Internal files: never publish
+docs/
+tests/
+scripts/
+partials/
+README.md

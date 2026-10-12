@@ -1,6 +1,8 @@
 # Elitron Labs website redesign — October 2026
 
-Branch: `redesign/2026-10`. Production (`main` → www.elitronlabs.io) is untouched until Ali approves the merge.
+Branch: `redesign/2026-10`. **Update 2026-10-12:** Ali approved the merge; `main` @ `24c3297` has been production since then
+(deployment `dpl_21jCdGwRftZS4v9jZ3ULGw8nb2tq`; rollback target `dpl_EEA5j9KDZ3TTC2GoyD2iGgJHUq6E`). Phase 2 work is on
+`phase2/brand-film` and is not in production until Ali approves.
 
 ## 1. Audit of the previous site (main @ f0a4a37)
 **Worked well:** fast static HTML/CSS/JS with no dependencies; a clear free-preview offer; honest labels on concept

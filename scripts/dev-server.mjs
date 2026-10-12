@@ -11,6 +11,7 @@ const require = createRequire(import.meta.url);
 const handler = require(join(root, "api/contact.js"));
 const vercel = JSON.parse(await readFile(join(root, "vercel.json"), "utf8"));
 const port = Number(process.argv[2] || 4321);
+const allowDocs = process.argv.includes("--allow-docs"); // film UI renders live in docs/film/ui
 const TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml", ".webp": "image/webp",
   ".jpg": "image/jpeg", ".png": "image/png", ".woff2": "font/woff2", ".mp4": "video/mp4", ".webm": "video/webm", ".xml": "application/xml", ".txt": "text/plain" };
 
@@ -37,12 +38,12 @@ http.createServer(async (req, res) => {
   }
   let p = url.pathname === "/" ? "/index.html" : decodeURIComponent(url.pathname);
   let file = join(root, p);
-  if (!file.startsWith(root) || /\/(api|tests|scripts|partials|docs|node_modules|\.git)\//.test(p)) file = join(root, "404.html");
+  if (!file.startsWith(root) || (/\/(api|tests|scripts|partials|node_modules|\.git)\//.test(p) || (!allowDocs && p.startsWith("/docs/")))) file = join(root, "404.html");
   let status = 200;
   try { if (!(await stat(file)).isFile()) throw 0; } catch { file = join(root, "404.html"); status = 404; }
   const body = await readFile(file);
   const range = req.headers.range;
-  const headers = { "Content-Type": TYPES[extname(file)] || "application/octet-stream", ...headersFor(p), "Accept-Ranges": "bytes" };
+  const headers = { "Content-Type": TYPES[extname(file)] || "application/octet-stream", ...(allowDocs && p.startsWith("/docs/") ? {} : headersFor(p)), "Accept-Ranges": "bytes" };
   if (range && status === 200) {
     const [s, e] = range.replace("bytes=", "").split("-").map(Number);
     const end = Math.min(e || body.length - 1, body.length - 1);

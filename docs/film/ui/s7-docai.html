@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="film.css">
+<style>
+.wrapx{display:grid;grid-template-columns:780px 1fr;gap:56px;height:936px;align-items:center}
+.doc{background:#F4F6FA;color:#1E293B;border-radius:10px;padding:56px 60px;height:880px;box-sizing:border-box;box-shadow:0 40px 90px -30px rgba(0,0,0,.8);font-family:Georgia,serif;position:relative}
+.doc h4{font:600 26px var(--font);margin:0 0 6px;color:#0F172A}.doc .sub{font:16px var(--mono);color:#64748B;margin-bottom:34px}
+.doc p{font-size:21px;line-height:1.7;margin:0 0 18px;max-width:none}
+.hl{border-radius:4px;padding:1px 3px;transition:none}
+.n1 .hl.x1{background:rgba(75,139,255,.25)}
+.n2 .hl.x2,.n3 .hl.x3,.n4 .hl.x4,.n5 .hl.x5{background:rgba(75,139,255,.25)}
+.rec .ph h2{font-size:28px}
+.f{display:grid;grid-template-columns:240px 1fr;align-items:center;padding:24px 30px;border-bottom:1px solid rgba(203,213,225,.08)}
+.f label{font:500 15px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#94A3B8}
+.f .v{height:52px;border-radius:10px;border:1px dashed rgba(148,163,184,.3);display:flex;align-items:center;padding:0 18px;font-size:23px;color:transparent}
+.fill .v{border-style:solid;border-color:rgba(75,139,255,.5);background:rgba(75,139,255,.08);color:#fff}
+</style></head><body><div class="stage"><div class="wrapx">
+<div class="doc"><h4>Service Request</h4><div class="sub">SAMPLE DOCUMENT · RECEIVED BY EMAIL</div>
+<p>Hello, this is <span class="hl x1">Jordan Example</span>. Our <span class="hl x2">upstairs air conditioner</span> is running but only blowing warm air.</p>
+<p>We're in <span class="hl x3">Dearborn Heights, 48127</span>. Could someone come out <span class="hl x4">this Tuesday morning</span>? It's getting warm upstairs, so <span class="hl x5">sooner is better</span>.</p>
+<p>Thank you,<br>Jordan</p></div>
+<section class="panel rec"><div class="ph"><h2>Extracted service record</h2><span class="chip violet">AI extraction</span></div>
+<div class="f" data-i="1"><label>Customer</label><div class="v">Jordan Example</div></div>
+<div class="f" data-i="2"><label>Service</label><div class="v">AC repair · not cooling</div></div>
+<div class="f" data-i="3"><label>Location</label><div class="v">Dearborn Heights, MI 48127</div></div>
+<div class="f" data-i="4"><label>Requested</label><div class="v">Tuesday · morning</div></div>
+<div class="f" data-i="5"><label>Urgency</label><div class="v">High</div></div>
+</section></div></div><div class="tagx">Illustration · sample document</div>
+<script>const n=+new URLSearchParams(location.search).get('n')||0;document.querySelectorAll('.hl').forEach(h=>{if(+h.className.match(/x(\d)/)[1]<=n)h.style.background='rgba(75,139,255,.28)'});document.querySelectorAll('.f').forEach(f=>{if(+f.dataset.i<=n)f.classList.add('fill')});</script></body></html>

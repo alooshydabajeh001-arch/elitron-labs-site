@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="film.css">
+<style>
+.app{display:grid;grid-template-columns:300px 1fr;height:936px}
+.side{padding:28px 22px;border-right:1px solid rgba(203,213,225,.1)}
+.side .logo{display:flex;gap:12px;align-items:center;color:#fff;font-size:22px;font-weight:600;margin-bottom:34px}
+.side .logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#4B8BFF,#8A7CFF)}
+.side a{display:block;padding:14px 16px;border-radius:11px;font-size:19px;color:#CBD5E1;margin-bottom:4px}
+.side a.on{background:rgba(75,139,255,.12);color:#fff}
+.main{padding:30px 34px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:26px}.top h1{font-size:34px;color:#fff;font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.col h3{font:500 15px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin:0 0 14px}
+.card{background:rgba(8,15,30,.6);border:1px solid rgba(203,213,225,.12);border-radius:14px;padding:18px;margin-bottom:14px;height:118px;box-sizing:border-box}
+.card b{display:block;color:#fff;font-size:19px;font-weight:540}.card span{display:block;color:#94A3B8;font-size:16px;margin-top:6px}
+.card .chip{margin-top:12px;font-size:12px;padding:6px 9px}
+.slot{height:118px;margin-bottom:14px}
+#mover{position:relative}
+body.nocard #mover{visibility:hidden}
+body.cardonly .stage>*:not(.app),body.cardonly .tagx{visibility:hidden}
+</style></head><body><div class="stage" style="padding:72px 96px">
+<div class="panel app"><aside class="side"><div class="logo"><i></i>Operations</div><a class="on">Pipeline</a><a>Schedule</a><a>Customers</a><a>Automations</a><a>Reports</a></aside>
+<main class="main"><div class="top"><h1>Job pipeline</h1><span class="chip blue">Sample workspace</span></div>
+<div class="cols">
+ <div class="col"><h3>New</h3><div class="card" id="mover"><b>AC not cooling</b><span>Sample customer A · 48127</span><div class="chip violet">AI scored · priority</div></div><div class="card"><b>Pricing question</b><span>Sample customer B</span></div></div>
+ <div class="col"><h3>Qualified</h3><div class="slot" id="target"></div><div class="card"><b>New system estimate</b><span>Sample customer C</span></div></div>
+ <div class="col"><h3>Scheduled</h3><div class="card"><b>Furnace repair</b><span>Sample customer D · Tue 9:00</span><div class="chip green">Confirmed</div></div><div class="card"><b>Maintenance visit</b><span>Sample customer E · Thu 1:30</span></div></div>
+ <div class="col"><h3>Completed</h3><div class="card"><b>Thermostat install</b><span>Sample customer F</span></div></div>
+</div></main></div></div><div class="tagx">Illustration · sample data</div>
+<script>const q=new URLSearchParams(location.search);if(q.get('mode'))document.body.classList.add(q.get('mode'));</script></body></html>

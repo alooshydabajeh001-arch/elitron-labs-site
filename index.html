@@ -40,7 +40,7 @@
       <a href="contact.html">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="contact.html?path=discovery" class="btn btn-primary btn-sm" data-track="cta_discovery_nav">Book a Discovery Call</a>
+      <a href="contact.html?path=discovery" class="btn btn-primary btn-sm" data-track="cta_discovery_nav">Request a Discovery Call</a>
       <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
     </div>
   </div>
@@ -51,7 +51,7 @@
     <a href="industries.html">Industries</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_discovery_mobile">Book a Discovery Call</a>
+    <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_discovery_mobile">Request a Discovery Call</a>
     <a href="contact.html?path=preview" class="btn btn-secondary" data-track="cta_preview_mobile">Get a Free Website Preview</a>
   </nav>
 </header>
@@ -76,7 +76,7 @@
       <p class="lede">Elitron Labs is a Michigan-based technology studio building high-performance websites, AI-powered applications and intelligent automation systems that help businesses attract customers, streamline operations and grow.</p>
       <div class="btn-row">
         <a href="#solutions" class="btn btn-primary" data-track="cta_explore_hero">Explore Our Solutions <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
-        <a href="contact.html?path=discovery" class="btn btn-secondary" data-track="cta_discovery_hero">Book a Discovery Call</a>
+        <a href="contact.html?path=discovery" class="btn btn-secondary" data-track="cta_discovery_hero">Request a Discovery Call</a>
       </div>
       <div class="hero-meta">
         <span><svg aria-hidden="true"><use href="assets/icons.svg#pin"/></svg>Based in Michigan</span>
@@ -146,11 +146,39 @@
   </div>
 </section>
 
+<!-- Brand film (loads only on demand) -->
+<section class="section film-sec" id="film" aria-labelledby="film-title">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow"><span class="num">02</span> Brand film</p>
+      <h2 id="film-title" class="h2">See Elitron Labs in Action.</h2>
+      <p class="lede">Discover how we combine software engineering, intelligent automation, and modern digital experiences to help businesses work smarter.</p>
+    </div>
+    <div class="film reveal" data-film>
+      <button class="film-poster" type="button" data-film-play aria-label="Play the Elitron Labs film, 47 seconds, with sound and captions">
+        <img src="assets/film/poster-1280.webp" srcset="assets/film/poster-1280.webp 1280w, assets/film/poster-1920.webp 1920w" sizes="(max-width: 1240px) 100vw, 1136px" alt="" width="1920" height="1080" loading="lazy" decoding="async">
+        <span class="film-play" aria-hidden="true"><svg><use href="assets/icons.svg#play"/></svg></span>
+        <span class="film-meta"><strong>What We Build at Elitron Labs</strong><span>0:47 · Sound on · Captions available</span></span>
+      </button>
+      <noscript>
+        <video controls preload="none" playsinline poster="assets/film/poster-1920.webp" width="1920" height="1080">
+          <source src="assets/film/elitron-film-1080.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English" src="assets/film/elitron-film.en.vtt" default>
+        </video>
+      </noscript>
+    </div>
+    <div class="film-foot reveal">
+      <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_project_film">Start Your Project <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+      <p class="muted small">On-screen interfaces are our live website, our interactive demo, or illustrations with sample data, labelled as such.</p>
+    </div>
+  </div>
+</section>
+
 <!-- C. Interactive automation demo -->
 <section class="section section--slate" id="demo" aria-labelledby="demo-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow"><span class="num">02</span> Automation in action</p>
+      <p class="eyebrow"><span class="num">03</span> Automation in action</p>
       <h2 id="demo-title" class="h2">See What Intelligent Automation Can Do.</h2>
       <p class="lede">Follow one service request from a website form to a booked appointment. Edit the inquiry, then step through what an automated workflow does with it.</p>
     </div>
@@ -192,7 +220,7 @@
 <section class="section" aria-labelledby="ind-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow"><span class="num">03</span> Who we help</p>
+      <p class="eyebrow"><span class="num">04</span> Who we help</p>
       <h2 id="ind-title" class="h2">Built for businesses at different stages.</h2>
       <p class="lede">From a local service company that needs to be found online to a growing team that needs custom software, the work starts with the problem, not the tool.</p>
     </div>
@@ -226,7 +254,7 @@
 <section class="section section--slate" aria-labelledby="work-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow"><span class="num">04</span> Selected work</p>
+      <p class="eyebrow"><span class="num">05</span> Selected work</p>
       <h2 id="work-title" class="h2">Our Work, Prototypes &amp; Technology.</h2>
       <p class="lede">Every project is labelled for what it is: a live project, an internal build, a working prototype or a concept design.</p>
     </div>
@@ -236,8 +264,8 @@
         <div class="project-body">
           <span class="status status--prototype">Working prototype</span>
           <h3>Summit HVAC</h3>
-          <p class="muted">Lead-generation website and booking flow for a home-services business. Fictional brand, built as a demo.</p>
-          <a href="demo-summit-hvac.html" class="link-arrow">Open the demo <svg aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
+          <p class="muted">Lead-generation website concept for a home-services business, with click-to-call and estimate calls to action. Fictional brand, built as a demo.</p>
+          <a href="case-summit-hvac.html" class="link-arrow">Read the case study <svg aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"/></svg></a>
         </div>
       </article>
       <article class="card project reveal">
@@ -267,7 +295,7 @@
 <section class="section" aria-labelledby="process-title">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow"><span class="num">05</span> How we work</p>
+      <p class="eyebrow"><span class="num">06</span> How we work</p>
       <h2 id="process-title" class="h2">From Idea to Intelligent Execution.</h2>
       <p class="lede">Clear deliverables and an approval point at every stage. You always know what is being built and why.</p>
     </div>
@@ -304,7 +332,7 @@
 <section class="section section--slate" aria-labelledby="why-title">
   <div class="wrap split">
     <div class="reveal">
-      <p class="eyebrow"><span class="num">06</span> Why Elitron Labs</p>
+      <p class="eyebrow"><span class="num">07</span> Why Elitron Labs</p>
       <h2 id="why-title" class="h2 mt-s">Built Around Your Business. Engineered for What Comes Next.</h2>
       <div class="why-list mt-m">
         <div class="why-item"><div class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#chip"/></svg></div><div><h3>Engineering-led problem solving</h3><p>Rooted in electrical and computer engineering. We start from how your systems actually work.</p></div></div>
@@ -355,6 +383,7 @@
           <li><a href="services.html#automation">AI Automation &amp; Integration</a></li>
           <li><a href="services.html#agents">AI Agents &amp; Voice</a></li>
           <li><a href="services.html#software">Custom Software</a></li>
+          <li><a href="capabilities.html">Engineering capabilities</a></li>
         </ul>
       </div>
       <div>
@@ -363,6 +392,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="work.html">Our Work</a></li>
           <li><a href="industries.html">Industries</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -371,7 +401,7 @@
         <ul>
           <li><a href="mailto:admin@elitronlabs.io">admin@elitronlabs.io</a></li>
           <li><a href="tel:+13132427470">(313) 242-7470</a></li>
-          <li><a href="contact.html?path=discovery">Book a discovery call</a></li>
+          <li><a href="contact.html?path=discovery">Request a discovery call</a></li>
           <li><a href="contact.html?path=preview">Free website preview</a></li>
         </ul>
       </div>

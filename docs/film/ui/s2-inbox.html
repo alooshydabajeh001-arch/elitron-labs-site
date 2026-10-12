@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="film.css">
+<style>
+.stage{width:3840px;display:grid;grid-template-columns:1000px 360px 1000px 360px 900px;gap:0;align-items:center;padding:110px 140px}
+.inbox .item{display:grid;grid-template-columns:14px 1fr auto;gap:18px;align-items:center;padding:26px 28px;border-bottom:1px solid rgba(203,213,225,.08)}
+.inbox .item .dot{width:12px;height:12px;border-radius:50%;background:#F87171;box-shadow:0 0 14px #F87171}
+.inbox .t{font-size:25px;color:#fff;font-weight:540}.inbox .s{font-size:19px;color:#94A3B8;margin-top:4px}
+.gap{display:flex;flex-direction:column;align-items:center;gap:18px;color:#94A3B8;font:500 18px/1.3 var(--mono);text-align:center;letter-spacing:.05em;text-transform:uppercase}
+.dash{width:260px;border-top:3px dashed rgba(148,163,184,.45)}
+.crm .empty{height:520px;display:grid;place-items:center;text-align:center}
+.crm .empty b{display:block;font-size:34px;color:#fff;font-weight:560}.crm .empty span{font-size:21px;color:#94A3B8}
+.cal{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:26px}
+.cal div{height:86px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(203,213,225,.08);font:500 16px var(--mono);color:#64748B;padding:10px}
+.cal .open{border-color:rgba(75,139,255,.35);color:#93B8FF}
+</style></head><body><div class="stage">
+<section class="panel inbox"><div class="ph"><h2>Inbox</h2><span class="chip red">4 unanswered</span></div>
+ <div class="item"><span class="dot"></span><div><div class="t">Service estimate request</div><div class="s">Website form · sample</div></div><span class="muted">2h</span></div>
+ <div class="item"><span class="dot"></span><div><div class="t">Pricing question</div><div class="s">Email · sample</div></div><span class="muted">5h</span></div>
+ <div class="item"><span class="dot"></span><div><div class="t">Appointment request</div><div class="s">Voicemail · sample</div></div><span class="muted">1d</span></div>
+ <div class="item"><span class="dot"></span><div><div class="t">Callback request</div><div class="s">Website form · sample</div></div><span class="muted">1d</span></div>
+</section>
+<div class="gap"><div class="dash"></div>Copy details<br>manually</div>
+<section class="panel crm"><div class="ph"><h2>CRM</h2><span class="chip red">Not synced</span></div><div class="empty"><div><b>No record found</b><span>Lead details not entered</span></div></div></section>
+<div class="gap"><div class="dash"></div>Check<br>availability</div>
+<section class="panel"><div class="ph"><h2>Calendar</h2><span class="chip blue">This week</span></div>
+ <div class="cal"><div>MON</div><div class="open">TUE · open</div><div>WED</div><div class="open">THU · open</div><div>FRI</div><div class="open">9:00</div><div></div><div></div><div class="open">1:30</div><div></div></div></section>
+</div><div class="tagx">Illustration · sample data</div><script>const k=new URLSearchParams(location.search).get("k");if(k!==null)document.querySelectorAll(".inbox .item").forEach((el,i)=>{if(i>=+k)el.style.visibility="hidden"});const c=document.querySelector(".inbox .chip");if(k!==null)c.textContent=k+" unanswered";</script></body></html>

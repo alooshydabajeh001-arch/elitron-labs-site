@@ -37,3 +37,12 @@ Rejected: first hero render 59868110-1fcb-450f-8e9c-3721b51cd6c1 (visible pseudo
   only at ≥760px wide, and never with `prefers-reduced-motion` or Save-Data. Pause/play control provided.
 - Workflow loop: lazy-attached when the demo scrolls into view; paused when off-screen; hidden on small screens.
 - No audio tracks exist in any file.
+
+## Brand film (Phase 2, 2026-10-12)
+See `docs/film/PRODUCTION-NOTES.md` for the full ledger (39.85 credits) and shot provenance.
+| File (`assets/film/`) | Use |
+|---|---|
+| elitron-film-1080.mp4, elitron-film-720.mp4 | Homepage "See Elitron Labs in Action" player (loaded only on play) |
+| elitron-film.en.vtt | Captions (default on) |
+| poster-1920.webp, poster-1280.webp | Player poster / static fallback (frame 12.2 s) |
+| `assets/case/*.webp` | Real screenshots of the site, demo and Summit demo used on case-study pages |

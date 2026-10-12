@@ -88,6 +88,31 @@
     $$("[data-lazy-video]").forEach(function (v) { vio.observe(v); });
   }
 
+  /* Brand film: nothing loads until the visitor presses play (user gesture = sound allowed) */
+  $$("[data-film]").forEach(function (box) {
+    var btn = $("[data-film-play]", box);
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var small = window.innerWidth < 900 || saveData;
+      var v = document.createElement("video");
+      v.controls = true; v.playsInline = true; v.preload = "auto";
+      v.poster = "assets/film/poster-1920.webp";
+      v.setAttribute("aria-label", "What We Build at Elitron Labs, brand film");
+      var srcs = small
+        ? [["assets/film/elitron-film-720.mp4", "video/mp4"]]
+        : [["assets/film/elitron-film-1080.mp4", "video/mp4"]];
+      srcs.forEach(function (s) { var e = document.createElement("source"); e.src = s[0]; e.type = s[1]; v.appendChild(e); });
+      var tr = document.createElement("track");
+      tr.kind = "captions"; tr.srclang = "en"; tr.label = "English"; tr.src = "assets/film/elitron-film.en.vtt"; tr.default = true;
+      v.appendChild(tr);
+      box.replaceChild(v, btn);
+      v.focus();
+      var p = v.play(); if (p && p.catch) p.catch(function () {});
+      track("film_play", { size: small ? "720" : "1080" });
+      v.addEventListener("ended", function () { track("film_complete"); });
+    });
+  });
+
   /* Work filters */
   var filters = $$("[data-filter]");
   filters.forEach(function (btn) {

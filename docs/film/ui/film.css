@@ -1,0 +1,15 @@
+@import url("/styles.css");
+html,body{margin:0;background:#070d1a;overflow:hidden}
+body{font-family:var(--font);color:var(--text);-webkit-font-smoothing:antialiased}
+.stage{width:1920px;height:1080px;position:relative;padding:72px 96px;box-sizing:border-box}
+.tagx{position:absolute;right:40px;bottom:32px;font:500 15px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#94A3B8;
+  border:1px solid rgba(148,163,184,.35);padding:9px 12px;border-radius:999px;background:rgba(8,15,30,.7)}
+.panel{background:linear-gradient(180deg,#16233B,#111C30);border:1px solid rgba(203,213,225,.14);border-radius:22px;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.ph{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:1px solid rgba(203,213,225,.1)}
+.ph h2{font-size:26px;font-weight:600;color:#fff;letter-spacing:-.01em}
+.muted{color:#94A3B8}
+.chip{display:inline-flex;align-items:center;gap:8px;font:500 15px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:8px 11px;border-radius:999px;border:1px solid}
+.red{color:#FCA5A5;border-color:rgba(248,113,113,.4);background:rgba(248,113,113,.08)}
+.blue{color:#93B8FF;border-color:rgba(75,139,255,.45);background:rgba(75,139,255,.1)}
+.green{color:#6EE7B7;border-color:rgba(52,211,153,.4);background:rgba(52,211,153,.08)}
+.violet{color:#C4BDFF;border-color:rgba(138,124,255,.45);background:rgba(138,124,255,.1)}
