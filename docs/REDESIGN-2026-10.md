@@ -75,3 +75,13 @@ small adapter. Pick one destination. Don't run both.
 ## 7. Rollback
 Production is unaffected until merge. After merge, use "Instant Rollback" to the previous production deployment in
 Vercel, or revert the merge commit.
+
+### Preview measurements (2026-10-12, deployment dpl_7yHZv8VNm9gFrqBGaBZ5diw6Horf)
+- Lighthouse mobile (home): Accessibility 100, Best Practices 92, SEO 69, Agentic Browsing 100.
+  The SEO and Best Practices deductions come from the preview environment itself: Vercel adds `x-robots-tag: noindex`
+  to preview URLs and injects the vercel.live feedback script, which the CSP blocks. Neither applies on the production
+  domain. The one real finding (brand link accessible name ≠ visible text) is fixed in the follow-up commit.
+- Performance trace, mobile (412px, Slow 4G, 4× CPU): LCP 1.24 s (hero poster image), CLS 0.00. Desktop in-browser:
+  LCP 1.10 s, CLS 0. Lab numbers, possibly warm cache. Field Core Web Vitals (CrUX/INP) need real traffic.
+- Live checks: security headers present; looser CSP applied only to the Summit demo; `POST /api/contact` → 503
+  `not_configured` (expected until env vars are set); GET → 405; unknown path → 404 page; sitemap 200.
