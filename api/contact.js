@@ -4,9 +4,11 @@
 // Configure in Vercel → Project → Settings → Environment Variables (never in code):
 //   LEAD_WEBHOOK_URL      optional  n8n (or other) webhook that receives the lead as JSON
 //   LEAD_WEBHOOK_SECRET   optional  HMAC-SHA256 key; signature sent as X-Elitron-Signature: sha256=<hex>
-//   RESEND_API_KEY        optional  sends a notification email via Resend
-//   LEAD_NOTIFY_TO        optional  notification recipient (default admin@elitronlabs.io)
-//   LEAD_NOTIFY_FROM      optional  verified sender, e.g. "Elitron Labs <leads@elitronlabs.io>"
+//   RESEND_API_KEY        emails each lead via Resend (the only variable needed for email delivery)
+//   LEAD_NOTIFY_TO        optional  recipient (default admin@elitronlabs.io)
+//   LEAD_NOTIFY_FROM      optional  sender (default Resend's onboarding@resend.dev, which needs no DNS setup
+//                                   but only delivers to the Resend account's own email address; set a
+//                                   verified elitronlabs.io sender here once the domain is verified in Resend)
 //   ALLOWED_ORIGINS       optional  comma-separated extra origins allowed to post (previews)
 // At least one sink must be configured; otherwise the endpoint returns 503 and the page
 // shows the direct email/phone fallback. Success is reported only after a sink accepts.
@@ -14,6 +16,7 @@
 const crypto = require("node:crypto");
 const { validateLead, safeCell, escapeHtml, makeReference } = require("./_lib/lead.js");
 
+const DEFAULT_FROM = "Elitron Labs Website <onboarding@resend.dev>";
 const DEFAULT_ORIGINS = ["https://www.elitronlabs.io", "https://elitronlabs.io"];
 const hits = new Map(); // best-effort per-instance rate limit (serverless instances are ephemeral)
 const WINDOW_MS = 10 * 60 * 1000, MAX_PER_WINDOW = 5;
@@ -69,7 +72,7 @@ function sendEmail(payload) {
   const rows = Object.entries(d).map(([k, v]) => `<tr><td style="padding:4px 12px 4px 0;color:#555"><b>${escapeHtml(k)}</b></td><td style="padding:4px 0">${escapeHtml(v).replace(/\n/g, "<br>")}</td></tr>`).join("");
   const label = payload.path === "preview" ? "Free website preview" : "Discovery call";
   const body = JSON.stringify({
-    from: process.env.LEAD_NOTIFY_FROM,
+    from: process.env.LEAD_NOTIFY_FROM || DEFAULT_FROM,
     to: [process.env.LEAD_NOTIFY_TO || "admin@elitronlabs.io"],
     reply_to: d.email,
     subject: `[Website lead] ${label}: ${(d.organization || d.business || d.name).slice(0, 80)} (${payload.reference})`,
@@ -96,7 +99,7 @@ module.exports = async function handler(req, res) {
   if (!result.ok) return res.status(result.status).json({ ok: false, error: result.error, fields: result.fields });
 
   const hasWebhook = !!process.env.LEAD_WEBHOOK_URL;
-  const hasEmail = !!(process.env.RESEND_API_KEY && process.env.LEAD_NOTIFY_FROM);
+  const hasEmail = !!process.env.RESEND_API_KEY;
   if (!hasWebhook && !hasEmail) {
     console.error("contact: no lead sink configured");
     return res.status(503).json({ ok: false, error: "not_configured" });

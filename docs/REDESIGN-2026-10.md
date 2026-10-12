@@ -37,23 +37,25 @@ into each page. The one dynamic piece is a Vercel serverless function (`api/cont
 | Security | `vercel.json`: strict CSP (no inline script/style on redesigned pages), HSTS, nosniff, frame DENY, Referrer-Policy, Permissions-Policy, COOP. A looser CSP applies only to the legacy Summit HVAC demo page. |
 | Analytics | None added. `app.js` fires `elitron:track` DOM events on CTA clicks, demo steps and successful submissions. Nothing is sent until an approved, consent-aware provider is wired to them. |
 
-## 4. Required configuration before the form can go live (Ali)
-The endpoint returns 503 until **at least one** destination is configured. When that happens, the page shows the email and
-phone fallback and keeps what the visitor typed. Set these in Vercel → elitron-labs-site → Settings → Environment Variables:
+## 4. Lead delivery: email to admin@elitronlabs.io (Ali, 2026-10-12)
+Leads are emailed to **admin@elitronlabs.io** through Resend (free tier). Reply-To is set to the visitor's address, so
+"Reply" goes straight to them. Until `RESEND_API_KEY` is set, the endpoint returns 503 and the page shows the
+email and phone fallback, keeping what the visitor typed.
 
-| Variable | Purpose |
-|---|---|
-| `LEAD_WEBHOOK_URL` | n8n (or other) webhook that receives the lead JSON |
-| `LEAD_WEBHOOK_SECRET` | HMAC key. Verify `X-Elitron-Signature: sha256=HMAC(secret, timestamp + "." + body)` and `X-Elitron-Timestamp` in n8n |
-| `RESEND_API_KEY` + `LEAD_NOTIFY_FROM` | Optional email notification (sender domain must be verified in Resend) |
-| `LEAD_NOTIFY_TO` | Defaults to admin@elitronlabs.io |
-| `ALLOWED_ORIGINS` | Optional extra origins (same-origin previews are already allowed) |
+**One-time setup (Ali only, about 5 minutes, $0):**
+1. Sign up at resend.com **using admin@elitronlabs.io** as the account email. With the default sender
+   `onboarding@resend.dev`, Resend only delivers to the account's own address, so no DNS changes are needed.
+2. Resend → API Keys → create a key with "Sending access" only.
+3. Vercel → elitron-labs-site → Settings → Environment Variables → add `RESEND_API_KEY` (Production + Preview) → Save.
+4. Vercel → Deployments → latest production → Redeploy (env vars apply on the next deployment).
+5. Submit a test inquiry on www.elitronlabs.io and confirm the email arrives (check spam the first time).
 
-Alternative already in the repo history: the Apps Script + private Sheet intake in
-`remediation/elitronlabs-inquiry/intake/` (REV-001). Its web-app URL could be used as the webhook target behind a
-small adapter. Pick one destination. Don't run both.
+Optional later: verify elitronlabs.io in Resend (DNS records; needs Ali's approval) and set
+`LEAD_NOTIFY_FROM="Elitron Labs <leads@elitronlabs.io>"` for a branded sender.
+Other supported variables: `LEAD_NOTIFY_TO` (default admin@elitronlabs.io), `LEAD_WEBHOOK_URL` / `LEAD_WEBHOOK_SECRET`
+(signed n8n webhook, if wanted later), `ALLOWED_ORIGINS`.
 
-## 5. Items for Ali to confirm
+## 5. Items confirmed by Ali (2026-10-12: "keep them")
 1. **Prices** on Solutions → "Digital Presence: from $799 + optional $79/mo" are carried over from the old site.
    Confirm they're still current (task queue notes a newer Motown offer price).
 2. **Timeline language:** "Standard websites can often launch within 1–2 weeks of design approval" replaces "5–7 days".

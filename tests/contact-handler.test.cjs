@@ -55,3 +55,17 @@ test("spam is silently accepted but not forwarded", async () => {
   const res = mockRes(); await load()(req({ ip: "6.6.6.6", body: { ...lead, fax: "x" } }), res);
   assert.equal(res.body.ok, true); assert.equal(calls, 0);
 });
+test("emails admin@elitronlabs.io via Resend with only RESEND_API_KEY set", async () => {
+  delete process.env.LEAD_WEBHOOK_URL; delete process.env.LEAD_NOTIFY_FROM; delete process.env.LEAD_NOTIFY_TO;
+  process.env.RESEND_API_KEY = "re_test_dummy";
+  let seen; global.fetch = async (url, opts) => { seen = { url, opts }; return { ok: true, status: 200 }; };
+  const res = mockRes(); await load()(req({ ip: "7.7.7.7" }), res);
+  assert.equal(res.statusCode, 200);
+  assert.equal(seen.url, "https://api.resend.com/emails");
+  const mail = JSON.parse(seen.opts.body);
+  assert.deepEqual(mail.to, ["admin@elitronlabs.io"]);
+  assert.equal(mail.reply_to, "pat@example.com");
+  assert.match(mail.from, /onboarding@resend\.dev/);
+  assert.equal(seen.opts.headers.Authorization, "Bearer re_test_dummy");
+  delete process.env.RESEND_API_KEY;
+});
