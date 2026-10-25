@@ -504,6 +504,9 @@ section[id],article[id]{scroll-margin-top:84px}
 .case-sec h2{font:500 12.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
 .case-sec .body>p{font-size:16.5px}
 .case-sec .body>p+p{margin-top:14px}
+.limits{margin:0;padding-left:20px;list-style:disc;display:grid;gap:10px;color:var(--muted)}
+.limits li::marker{color:var(--muted)}
+.limits strong{color:var(--white)}
 .case-shot{margin-top:6px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-strong)}
 .case-shot+.case-shot{margin-top:16px}
 .case-shot figcaption{padding:10px 14px;font-size:13px;color:var(--muted);background:var(--slate);border-top:1px solid var(--line)}

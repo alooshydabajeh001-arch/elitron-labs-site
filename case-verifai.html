@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research prototype: VERIFAI | Elitron Labs</title>
+<meta name="description" content="VERIFAI is an Elitron Labs research prototype that checks the facts inside an AI agent's purchase order against source documents before the order goes out. Synthetic data only.">
+<link rel="canonical" href="https://www.elitronlabs.io/case-verifai.html">
+<meta name="theme-color" content="#080F1E">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Elitron Labs">
+<meta property="og:title" content="Research prototype: VERIFAI — Elitron Labs">
+<meta property="og:description" content="A research prototype that checks the facts inside an AI agent's purchase order against source documents before it goes out. Synthetic data only.">
+<meta property="og:url" content="https://www.elitronlabs.io/case-verifai.html">
+<meta property="og:image" content="https://www.elitronlabs.io/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- @header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" aria-hidden="true"><use href="assets/icons.svg#mark"/></svg>
+      <span>Elitron Labs<small>MICHIGAN · USA</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Solutions</a>
+      <a href="work.html">Our Work</a>
+      <a href="industries.html">Industries</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html?path=discovery" class="btn btn-primary btn-sm" data-track="cta_discovery_nav">Request a Discovery Call</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
+    <a href="index.html">Home</a>
+    <a href="services.html">Solutions</a>
+    <a href="work.html">Our Work</a>
+    <a href="industries.html">Industries</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_discovery_mobile">Request a Discovery Call</a>
+    <a href="contact.html?path=preview" class="btn btn-secondary" data-track="cta_preview_mobile">Get a Free Website Preview</a>
+  </nav>
+</header>
+<!-- /@header -->
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow"><a href="work.html" class="link-arrow">Our Work</a> · Research prototype</p>
+    <h1 class="display">VERIFAI: checking the facts inside an AI agent's actions.</h1>
+    <p class="lede">A research prototype that checks a purchase order prepared by an AI agent against its source documents before the order goes out. If it can't find the evidence, it hands the order to a person instead of guessing.</p>
+    <div class="case-meta"><div><span>Status</span><b><span class="status status--prototype">Research prototype</span></b></div><div><span>Type</span><b>Verification research · Python</b></div><div><span>Data</span><b>Synthetic only</b></div><div><span>Year</span><b>2026</b></div></div>
+  </div>
+</section>
+<div class="wrap">
+  <figure class="case-shot"><img src="assets/case/verifai-hero.webp" alt="Illustration: two glowing documents with lines linking matching fields; one red line stops at a checkpoint" width="1200" height="672" decoding="async" fetchpriority="high"><figcaption>Illustration (AI-generated). Not a screenshot of VERIFAI.</figcaption></figure>
+
+  <section class="case-sec reveal" aria-labelledby="case-verifai-0"><h2 id="case-verifai-0">The question</h2><div class="body"><p>AI agents are starting to read supplier quotes and prepare purchase orders. Most guardrails check whether an action is <em>allowed</em>: is the supplier approved, is the amount under the limit? VERIFAI asks a different question: are the <em>facts inside</em> the action actually supported by the source documents?</p><p>A wrong price, quantity, part revision or supplier can pass every permission check and still cost a small business real money.</p></div></section>
+
+  <section class="case-sec reveal" aria-labelledby="case-verifai-1"><h2 id="case-verifai-1">How it works</h2><div class="body"><ul class="checklist"><li>Splits a proposed purchase order into individual claims: price, quantity, unit of measure, part number and revision, supplier, currency, quote validity, totals and approval</li><li>Checks each claim against the document or record it should come from, such as the supplier quote, the approval record or the approved-supplier list</li><li>Decides one of three things: <strong>allow</strong> when every claim is supported, <strong>block</strong> when a claim contradicts its source, or <strong>escalate</strong> to a person when the evidence is missing or unreadable</li><li>Gives a short, readable reason for every decision</li></ul><figure class="case-shot"><img src="assets/case/verifai-outcomes.webp" alt="Illustration: three glowing tokens showing a green check, a red stop sign and an amber person icon" width="1200" height="672" loading="lazy" decoding="async"><figcaption>Illustration (AI-generated) of the three outcomes: allow, block, escalate to a person.</figcaption></figure></div></section>
+
+  <section class="case-sec reveal" aria-labelledby="case-verifai-2"><h2 id="case-verifai-2">What we tested</h2><div class="body"><p>A testbed of synthetic purchase-order scenarios: generated supplier quotes in several layouts, optional approval records, and the order an agent proposes from them. We seeded 13 types of error (wrong price, quantity, unit, part revision, supplier, currency, expired quote, bad arithmetic, missing or insufficient approval, unapproved supplier, unsupported claims and missing source documents) alongside clean orders.</p><p>We compared four set-ups: no checking, permission-style rules only, evidence checks only, and the two combined. A separate held-out set uses a quote layout the prototype had never seen.</p></div></section>
+
+  <section class="case-sec reveal" aria-labelledby="case-verifai-3"><h2 id="case-verifai-3">Verified results</h2><div class="body"><div class="results"><div class="result"><b>100%</b><span>of seeded errors not let through by the combined checks (synthetic data, both sets)</span></div><div class="result"><b>~18%</b><span>caught by permission-style rules alone (16.7–18.5% across runs)</span></div><div class="result"><b>~50%</b><span>of clean orders on the unseen layout sent to a person (42–59% across runs)</span></div></div><p class="muted small mt-s">Reproduced in October 2026 from the testbed code: 480 synthetic scenarios per set, four random seeds. The same author wrote the scenarios, the errors and the checks, so these numbers show the method works on the errors it was designed for. They are not evidence of real-world accuracy.</p></div></section>
+
+  <section class="case-sec reveal" aria-labelledby="case-verifai-4"><h2 id="case-verifai-4">Limits</h2><div class="body"><ul class="limits"><li><strong>Unfamiliar documents.</strong> On a quote layout it had never seen, the prototype couldn't read the quote and escalated instead. That fails safe, but it would send about half of good orders to a person. This is the main open problem.</li><li><strong>Synthetic data only.</strong> No real quotes, orders, customers or suppliers have been used.</li><li><strong>Not yet compared</strong> with an AI-judge baseline or with published agent guardrail research.</li><li><strong>No users yet.</strong> VERIFAI is not a product and is not for sale.</li></ul></div></section>
+
+  <section class="case-sec reveal" aria-labelledby="case-verifai-5"><h2 id="case-verifai-5">Project status</h2><div class="body"><p>Research prototype, October 2026. Next steps: independently written test cases, reading unfamiliar document layouts reliably, and testing alongside real ordering in "shadow mode," where VERIFAI only observes and nothing it decides is acted on.</p></div></section>
+</div>
+<section class="section" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div class="cta reveal">
+      <h2 id="cta-title" class="h2">Interested in the research?</h2>
+      <p class="lede">If you run purchasing for a small business and would like to talk about how quote and order mistakes happen in your work, we'd like to hear from you.</p>
+      <div class="btn-row">
+        <a href="contact.html?path=discovery" class="btn btn-primary">Get in touch</a>
+        <a href="work.html" class="btn btn-secondary">Back to Our Work</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<!-- @footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="brand">
+          <svg class="brand-mark" aria-hidden="true"><use href="assets/icons.svg#mark"/></svg>
+          <span>Elitron Labs<small>MICHIGAN · USA</small></span>
+        </a>
+        <p>A Michigan-based technology studio building websites, AI-powered software and business automation.</p>
+      </div>
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="services.html#websites">Website Design &amp; Development</a></li>
+          <li><a href="services.html#automation">AI Automation &amp; Integration</a></li>
+          <li><a href="services.html#agents">AI Agents &amp; Voice</a></li>
+          <li><a href="services.html#software">Custom Software</a></li>
+          <li><a href="capabilities.html">Engineering capabilities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="work.html">Our Work</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:admin@elitronlabs.io">admin@elitronlabs.io</a></li>
+          <li><a href="tel:+13132427470">(313) 242-7470</a></li>
+          <li><a href="contact.html?path=discovery">Request a discovery call</a></li>
+          <li><a href="contact.html?path=preview">Free website preview</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Elitron Labs LLC · Michigan, USA</span>
+      <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav>
+    </div>
+  </div>
+</footer>
+<!-- /@footer -->
+<script src="app.js" defer></script>
+</body>
+</html>
