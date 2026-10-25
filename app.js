@@ -324,7 +324,7 @@
             Object.keys(res.body.fields).forEach(function (k) { var el = form.elements[k]; if (el && el.id) fieldError(el, res.body.fields[k]); });
             show("err", "Please check the highlighted fields.");
           } else {
-            show("err", "We couldn't send your request right now. Please email <a href=\"mailto:admin@elitronlabs.io\">admin@elitronlabs.io</a> or call <a href=\"tel:+13132427470\">(313) 242-7470</a>. Your details are still in the form.");
+            show("err", "We couldn't send your request right now. Please email <a href=\"mailto:admin@elitronlabs.io\">admin@elitronlabs.io</a> or call <a href=\"tel:+13138885505\">(313) 888-5505</a>. Your details are still in the form.");
           }
         })
         .catch(function () {
