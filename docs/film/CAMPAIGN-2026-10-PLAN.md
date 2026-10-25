@@ -107,3 +107,17 @@ BridgeOS / AegisFlow appear only as clearly labelled **concepts**, since neither
 - **Outputs:** `work/campaign-2026-10/out/` contains F01/F02/F03 `.mp4` (H.264, AAC, -16 LUFS), `.vtt` captions, `-poster.webp`, and `preview.html` (captions on, no autoplay).
 - **Runtime note:** Film 01 runs 54.1 s against the 48 s brief, because the 12 approved lines total 49 s of speech. Fix options: trim 2–3 lines and re-voice (~1 credit), or accept ~54 s.
 - **Not done (needs Ali):** site integration (replace the hero film, add Films 02/03 to their pages) on a branch, then review, then deploy.
+
+## 10. Released (2026-10-25, Ali approved)
+- Live on elitronlabs.io:
+  - Film 01 on the homepage (`#film`), replacing the Oct 12 film;
+  - Film 02 in `services.html#automation`;
+  - Film 03 on `case-verifai.html`.
+- Playback: click to play only, captions on by default, 720p under 900 px wide or with Save-Data, otherwise 1080p.
+- Release: commit 4aed5b2, merged as 134d499.
+  - Vercel production deployment: dpl_BPpxzTAJ9xjXDnFZJSmoFSMrmvi5.
+  - Rollback target: dpl_BXPAPhjfmfxamzhaMxjKW1Pjetzg.
+- Verified live:
+  - all film assets return 206 with the correct types;
+  - homepage film plays with 12 caption cues;
+  - no console errors.
