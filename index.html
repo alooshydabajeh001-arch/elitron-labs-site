@@ -34,6 +34,7 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html" aria-current="page">Home</a>
       <a href="services.html">Solutions</a>
+      <a href="capabilities.html">Engineering</a>
       <a href="work.html">Our Work</a>
       <a href="industries.html">Industries</a>
       <a href="about.html">About</a>
@@ -47,6 +48,7 @@
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
     <a href="index.html" aria-current="page">Home</a>
     <a href="services.html">Solutions</a>
+    <a href="capabilities.html">Engineering</a>
     <a href="work.html">Our Work</a>
     <a href="industries.html">Industries</a>
     <a href="about.html">About</a>
@@ -90,6 +92,36 @@
 </section>
 
 <!-- B. Solutions -->
+<!-- Two journeys: website services vs AI engineering -->
+<section class="section section--tight" id="start" aria-labelledby="start-title">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <p class="eyebrow">Start here</p>
+      <h2 id="start-title" class="h2">Two ways to work with us.</h2>
+    </div>
+    <div class="grid g2 paths">
+      <article class="card path reveal">
+        <span class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#globe"/></svg></span>
+        <h3>I need a website that brings in customers</h3>
+        <p>A fast, modern site built around your business. Standard websites start from $799 and are planned to launch within 1–2 weeks of design approval. See a free preview before you commit.</p>
+        <div class="btn-row">
+          <a href="contact.html?path=preview" class="btn btn-primary" data-track="cta_preview_paths">Get a Free Website Preview</a>
+          <a href="services.html#websites" class="link-arrow">Website services <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+      <article class="card path reveal">
+        <span class="icon-tile"><svg aria-hidden="true"><use href="assets/icons.svg#spark"/></svg></span>
+        <h3>I need AI, automation or custom software</h3>
+        <p>Workflow automation, AI assistants, integrations and custom applications, with people approving the actions that matter. Scoped and quoted after a free discovery call.</p>
+        <div class="btn-row">
+          <a href="contact.html?path=discovery" class="btn btn-primary" data-track="cta_discovery_paths">Request a Discovery Call</a>
+          <a href="capabilities.html" class="link-arrow">Engineering capabilities <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="solutions" aria-labelledby="solutions-title">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -258,6 +290,20 @@
       <h2 id="work-title" class="h2">Our Work, Prototypes &amp; Technology.</h2>
       <p class="lede">Every project is labelled for what it is: a live project, an internal build, a working prototype or a concept design.</p>
     </div>
+    <article class="card spotlight reveal" aria-labelledby="spot-verifai">
+      <figure class="spotlight-media"><img src="assets/case/verifai-hero.webp" alt="Illustration: two glowing documents with lines linking matching fields; one red line stops at a checkpoint" width="1200" height="672" loading="lazy" decoding="async"><figcaption>Illustration (AI-generated)</figcaption></figure>
+      <div class="spotlight-body">
+        <span class="status status--prototype">Research prototype</span>
+        <h3 id="spot-verifai">VERIFAI: checking the facts inside an AI agent's actions</h3>
+        <p>Before an AI agent sends a purchase order, VERIFAI checks each detail (price, quantity, part, supplier) against the source quote. If the evidence is missing, it hands the order to a person instead of guessing.</p>
+        <ul class="checklist">
+          <li>Let none of 13 seeded error types through; permission-style rules alone caught about 18%</li>
+          <li>Sends about half of clean orders on an unfamiliar quote layout to a person, the main open problem</li>
+        </ul>
+        <p class="muted small">Synthetic data only. No users or customers yet.</p>
+        <a href="case-verifai.html" class="link-arrow" data-track="cta_verifai_home">See the research <svg aria-hidden="true"><use href="assets/icons.svg#arrow"/></svg></a>
+      </div>
+    </article>
     <div class="grid g3">
       <article class="card project reveal">
         <div class="project-visual"><div class="mock mock--hvac" aria-hidden="true"><div class="bar w40"></div><div class="row grow"><div class="blk"></div><div class="blk f60"></div></div><div class="row h30"><div class="blk"></div><div class="blk"></div><div class="blk"></div></div></div></div>

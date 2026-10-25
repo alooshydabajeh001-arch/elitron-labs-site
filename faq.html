@@ -18,15 +18,7 @@
 <link rel="preload" href="assets/fonts/geist-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How much does a project typically cost?","acceptedAnswer":{"@type":"Answer","text":"Standard websites start from $799 one-time setup, with an optional $79 per month care plan. AI automation, AI agents and custom software are scoped and quoted after a free discovery call, because the cost depends on what needs to be connected and built."}},
-{"@type":"Question","name":"How long does development take?","acceptedAnswer":{"@type":"Answer","text":"We plan standard websites to launch within 1–2 weeks of design approval. Automation and custom software are scheduled during scoping, and your proposal includes milestones."}},
-{"@type":"Question","name":"Can you work with my existing software?","acceptedAnswer":{"@type":"Answer","text":"Usually, yes. We connect tools through their official APIs, webhooks or automation platforms such as n8n. During discovery we confirm what each of your tools allows and tell you if something cannot be connected reliably."}},
-{"@type":"Question","name":"Do I own the website or source code?","acceptedAnswer":{"@type":"Answer","text":"Yes. Once your project is paid in full, you own your website, your content and the custom code we write for you. Third-party tools, services and licences remain with their providers under their own terms."}},
-{"@type":"Question","name":"Can AI automation be added to my existing business?","acceptedAnswer":{"@type":"Answer","text":"Yes. We recommend starting with one high-value workflow, such as lead follow-up or appointment booking, connected to the tools you already use, then expanding once it is working."}},
-{"@type":"Question","name":"What happens after deployment?","acceptedAnswer":{"@type":"Answer","text":"You get a handover walkthrough and documentation of what was built. Ongoing support is optional and defined in your agreement; for websites that is the care plan."}},
-{"@type":"Question","name":"What security and maintenance responsibilities are included?","acceptedAnswer":{"@type":"Answer","text":"They are written into your agreement before work starts, so it is clear who maintains what. We build with secure defaults, but we do not currently hold formal certifications such as SOC 2 or ISO 27001 and do not claim compliance on your behalf."}}
-]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a project typically cost?", "acceptedAnswer": {"@type": "Answer", "text": "Standard websites start from $799 one-time setup, with an optional $79 per month care plan. AI automation, AI agents and custom software are scoped and quoted after a free discovery call, because the cost depends on what needs to be connected and built."}}, {"@type": "Question", "name": "How long does development take?", "acceptedAnswer": {"@type": "Answer", "text": "We plan standard websites to launch within 1–2 weeks of design approval. Automation and custom software are scheduled during scoping, and your proposal includes milestones."}}, {"@type": "Question", "name": "Can you work with my existing software?", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes. We connect tools through their official APIs, webhooks or automation platforms such as n8n. During discovery we confirm what each of your tools allows and tell you if something cannot be connected reliably."}}, {"@type": "Question", "name": "Do I own the website or source code?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Once your project is paid in full, you own your website, your content and the custom code we write for you. Third-party tools, services and licences remain with their providers under their own terms."}}, {"@type": "Question", "name": "Can AI automation be added to my existing business?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We recommend starting with one high-value workflow, such as lead follow-up or appointment booking, connected to the tools you already use, then expanding once it is working."}}, {"@type": "Question", "name": "What happens after deployment?", "acceptedAnswer": {"@type": "Answer", "text": "You get a handover walkthrough and documentation of what was built. Ongoing support is optional and defined in your agreement; for websites that is the care plan."}}, {"@type": "Question", "name": "What security and maintenance responsibilities are included?", "acceptedAnswer": {"@type": "Answer", "text": "They are written into your agreement before work starts, so it is clear who maintains what. We build with secure defaults, but we do not currently hold formal certifications such as SOC 2 or ISO 27001 and do not claim compliance on your behalf."}}, {"@type": "Question", "name": "Is my business data used to train AI models?", "acceptedAnswer": {"@type": "Answer", "text": "We don't train AI models on your data. When a build uses an AI service, we name the provider in your proposal, connect through its business API, and check its current data-use and retention terms with you before we build."}}, {"@type": "Question", "name": "Where does our data go in an AI workflow?", "acceptedAnswer": {"@type": "Answer", "text": "We map every system a piece of data passes through, what is sent to an AI service and how long it is kept, before we build. Where possible, automations run in accounts you own, and each AI step receives only the fields it needs."}}, {"@type": "Question", "name": "Can AI take actions without a person checking?", "acceptedAnswer": {"@type": "Answer", "text": "Only where you decide it should. Actions such as sending customer messages, moving money or publishing content can wait for a person's approval, and every automated step is logged."}}, {"@type": "Question", "name": "Can you work with sensitive or regulated data?", "acceptedAnswer": {"@type": "Answer", "text": "Tell us at the start. We do not currently hold formal certifications such as SOC 2 or ISO 27001. We'll say what we can and cannot support, and may recommend keeping certain data out of AI steps entirely."}}]}
 </script>
 </head>
 <body>
@@ -41,6 +33,7 @@
     <nav class="nav-links" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="services.html">Solutions</a>
+      <a href="capabilities.html">Engineering</a>
       <a href="work.html">Our Work</a>
       <a href="industries.html">Industries</a>
       <a href="about.html">About</a>
@@ -54,6 +47,7 @@
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile" hidden>
     <a href="index.html">Home</a>
     <a href="services.html">Solutions</a>
+    <a href="capabilities.html">Engineering</a>
     <a href="work.html">Our Work</a>
     <a href="industries.html">Industries</a>
     <a href="about.html">About</a>
@@ -123,6 +117,34 @@
         <p>Responsibilities are written into your agreement before work starts, so it is always clear who maintains what: hosting, updates, accounts, access and data.</p>
         <p>We build with secure defaults: least-privilege access, secrets kept out of code, validated inputs, automated tests for important logic, and human approval before sensitive actions. See <a href="capabilities.html#secure">how we approach security</a>.</p>
         <p>We do not currently hold formal security certifications such as SOC 2 or ISO 27001, and we don't claim compliance on your behalf. If your project needs them, we'll say so up front.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Is my business data used to train AI models?</summary>
+      <div class="answer">
+        <p><strong>We don't train AI models on your data.</strong> When a build uses an AI service, we name the provider in your proposal and connect through its business API.</p>
+        <p>Before we build, we check that provider's current data-use and retention terms with you, so you know whether anything you send could be stored or used for training.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Where does our data go in an AI workflow?</summary>
+      <div class="answer">
+        <p>We map it before we build: every system a piece of data passes through, what is sent to an AI service, and how long each system keeps it. That map is part of your handover documentation.</p>
+        <p>Where possible, automations run in accounts you own, such as your CRM, email and cloud storage, so you can see and revoke access. Each AI step receives only the fields it needs.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Can AI take actions without a person checking?</summary>
+      <div class="answer">
+        <p>Only where you decide it should. Actions such as sending messages to customers, moving money or publishing content can be set to wait for a person's approval, and we recommend that for anything hard to undo.</p>
+        <p>Every automated step is logged with what ran, when and with what result, so you can review what the system did.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Can you work with sensitive or regulated data?</summary>
+      <div class="answer">
+        <p>Tell us at the start. Some data, such as health records, payment card data or export-controlled technical information, carries legal requirements that shape how a system must be built and hosted.</p>
+        <p>We do not currently hold formal certifications such as SOC 2 or ISO 27001. We'll tell you what we can and cannot support, and we may recommend keeping certain data out of AI steps entirely.</p>
       </div>
     </details>
   </div>
