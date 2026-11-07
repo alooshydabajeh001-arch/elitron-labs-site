@@ -257,6 +257,10 @@
     };
     var initial = params.get("path") === "preview" ? "preview" : "discovery";
     select(initial, false);
+    // Printed leave-behind QR codes link here with ?business=<name>&ref=<lead code>.
+    var biz = (params.get("business") || "").slice(0, 160);
+    var bizField = $("#p-business");
+    if (biz && bizField && !bizField.value) bizField.value = biz;
     var type = params.get("type");
     if (type) { var sel = $("#d-type"); if (sel && $$("option", sel).some(function (o) { return o.value === type; })) sel.value = type; }
     tabs.forEach(function (t, i) {
@@ -309,7 +313,8 @@
       data.path = form.getAttribute("data-lead-form");
       data.elapsed_ms = Date.now() - started;
       data.request_id = requestId;
-      data.page = location.pathname;
+      var ref = new URLSearchParams(location.search).get("ref") || "";
+      data.page = location.pathname + (/^[A-Za-z0-9-]{1,40}$/.test(ref) ? "#ref=" + ref : "");
       btn.setAttribute("aria-busy", "true"); btn.disabled = true;
       var ctrl = "AbortController" in window ? new AbortController() : null;
       var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 20000) : null;

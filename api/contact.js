@@ -76,7 +76,7 @@ function sendEmail(payload) {
     to: [process.env.LEAD_NOTIFY_TO || "admin@elitronlabs.io"],
     reply_to: d.email,
     subject: `[Website lead] ${label}: ${(d.organization || d.business || d.name).slice(0, 80)} (${payload.reference})`,
-    html: `<p><b>${label}</b> request ${payload.reference} received ${payload.received_at}.</p><table>${rows}</table><p style="color:#777">Reply goes to the sender. Review before responding.</p>`,
+    html: `<p><b>${label}</b> request ${payload.reference} received ${payload.received_at}.</p>${payload.page ? `<p style="color:#555">From page: ${escapeHtml(payload.page)}</p>` : ""}<table>${rows}</table><p style="color:#777">Reply goes to the sender. Review before responding.</p>`,
   });
   return withRetry(() => postJson("https://api.resend.com/emails", body, { Authorization: `Bearer ${process.env.RESEND_API_KEY}` }));
 }
