@@ -8,17 +8,17 @@
 // style set grid
 (function(){
   var rooms=[
-    ['t01-paris','Paris garden terrace',1],['t02-hill-country','Texas Hill Country room',1],
-    ['t03-venice','Venetian loggia',1],['t04-santa-barbara','Santa Barbara terrace',1],
-    ['t05-charleston','Charleston brick loggia',1],['t06-vienna','Viennese pavilion',1],
-    ['t07-steel-glass','Steel & glass pavilion',1],['t08-plain-modern','Plain modern patio',0],
-    ['t09-tuscan','Tuscan portico',1],['t10-michigan-lake','Michigan lake porch',1]];
+    ['t01-paris','Limestone & olive'],['t02-hill-country','Cedar beam hearth'],
+    ['t03-venice','Canal loggia'],['t04-santa-barbara','Plaster & bougainvillea'],
+    ['t05-charleston','Brick vault gallery'],['t06-vienna','Coffered garden pavilion'],
+    ['t07-steel-glass','Steel, glass & fire'],['t11-orangery','Iron orangery'],
+    ['t09-tuscan','Vineyard hearth'],['t10-michigan-lake','Great Lakes porch']];
   var g=document.getElementById('set');
   rooms.forEach(function(x,i){
-    var d=document.createElement('div'); d.className='room'+(x[2]?'':' no');
+    var d=document.createElement('div'); d.className='room';
     var n=String(i+1).padStart(2,'0');
     d.innerHTML='<img loading="lazy" src="assets/studio/'+x[0]+'.jpg" alt="'+x[1]+' (AI concept render)">'+
-      '<span class="n">'+n+'/10<br>'+x[1].toUpperCase()+'</span><span class="m">'+(x[2]?'&#10003;':'&#10005;')+'</span>';
+      '<span class="m">'+n+'</span><span class="n">'+x[1].toUpperCase()+'</span>';
     g.appendChild(d);
   });
 })();
