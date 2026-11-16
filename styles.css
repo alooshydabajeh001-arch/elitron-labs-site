@@ -119,7 +119,7 @@ section[id],article[id]{scroll-margin-top:84px}
 .brand-mark{width:32px;height:32px;flex:none}
 .brand small{display:block;font:500 10px/1 var(--mono);letter-spacing:.22em;color:var(--muted);margin-top:3px}
 .nav-links{display:flex;align-items:center;gap:4px}
-.nav-links a{padding:9px 13px;border-radius:9px;color:var(--text);font-size:14.5px;transition:color .2s,background-color .2s}
+.nav-links a{white-space:nowrap;padding:9px 13px;border-radius:9px;color:var(--text);font-size:14.5px;transition:color .2s,background-color .2s}
 .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.05)}
 .nav-links a[aria-current="page"]{color:var(--white)}
 .nav-cta{display:flex;align-items:center;gap:10px}
@@ -524,7 +524,7 @@ section[id],article[id]{scroll-margin-top:84px}
 .spotlight-body .link-arrow{margin-top:auto;padding-top:18px}
 @media (max-width:860px){.spotlight{grid-template-columns:1fr}.spotlight-media{min-height:0;aspect-ratio:16/9}}
 /* nav collapses to the menu below 1120px (7 links + CTA need the room) */
-@media (max-width:1120px){
+@media (max-width:1200px){
   .nav-links,.nav-cta .btn-secondary{display:none}
   .menu-btn{display:inline-flex}
   .mobile-nav{display:block;position:fixed;inset:72px 0 0 0;z-index:99;background:var(--navy);padding:24px var(--gutter) 40px;overflow-y:auto;border-top:1px solid var(--line)}
